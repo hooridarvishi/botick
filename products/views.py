@@ -10,6 +10,7 @@ class ProductListView(ListView):
     queryset = ProductModel.published.all()
 
 
+
 def productDetailView(request, pk):
     product = get_object_or_404(ProductModel, id=pk, status=ProductModel.Status.PUBLISHED)
     context = {
