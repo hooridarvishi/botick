@@ -1,0 +1,49 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block title %}
+    detail
+{% endblock %}
+{% block head %}
+    <h1> جزییات محصول</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="detail-content">
+
+<div>
+    {% for img in product.images.all %}
+         <img src="{{ img.image_file.url }}">
+    {% endfor %}
+</div>
+    <div class="card">
+  <div class="card-header">
+          <div class="title-content">
+       <h1> اسم محصول:</h1>
+<h1  class="details-items">{{ product.title }}</h1>
+    </div>
+    <br>
+  </div>
+          <div class="card-body">
+                <div class="title-content">
+       <h1> توضیحات:</h1>
+<h1  class="details-items">{{ product.description }}</h1>
+    </div>
+  </div>
+  <div class="card-body">
+                <div class="title-content">
+       <h1> قیمت:</h1>
+<h1  class="details-items">{{ product.price }}تومان</h1>
+    </div>
+  </div>
+  <div class="card-footer">
+    <div class="author-content">
+<h1 class="author-info">
+    نام فروشنده:<span class="details-items"> {{ product.author }}</span>
+</h1>
+    </div></div>
+</div>
+    </div>
+{% endblock %}

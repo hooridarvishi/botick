@@ -1,0 +1,33 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+{% block title %}
+    list of products
+{% endblock %}
+{% block head %}
+    list
+{% endblock %}
+{% block content %}
+    <div class="grid-container-list">
+{#    {% for image in images %}#}
+{#        {{ image. }}#}
+{#    {% endfor %}#}
+            {% for product in products %}
+
+        <div class="grid-item-list">
+
+     <img  src="{{ product.images.first.image_file.url }}" alt="{{product.images.first.title}}">
+ <br>
+ <br> <br>
+       <a href="{{ product.get_absolute_url }}">{{ product.title }}
+       </a>
+            <br>
+     <div class="grid-item-description">
+            {{ product.description|truncatewords:4 }}
+      </div>
+        <div class="item-list-price">
+        {{ product.price }}تومان
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

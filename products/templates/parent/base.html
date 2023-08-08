@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8" dir="rtl">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/products/list.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/products/detail.css' %}">
+        {% block head %}
+        {% endblock %}
+</head>
+<body>
+
+        {% block content %}
+        {% endblock %}
+</body>
+</html>
