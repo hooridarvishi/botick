@@ -68,3 +68,14 @@ class ImageModel(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ContactModel(models.Model):
+    message = models.TextField(verbose_name="پیام")
+    name = models.CharField(max_length=250, verbose_name="نام")
+    email = models.EmailField(verbose_name="ایمیل")
+    phone = models.CharField(max_length=11, verbose_name="شماره تماس")
+    subject = models.CharField(max_length=250, verbose_name="موضوع")
+
+    def __str__(self):
+        return self.subject

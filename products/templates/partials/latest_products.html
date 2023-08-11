@@ -1,0 +1,38 @@
+{% load static %}
+
+
+    {% for product in l_products %}
+
+
+          <div class="box">
+              <a href="{{ product.get_absolute_url }}">
+              <div class="img-box">
+
+        {% for img in l_products.images.all %}
+
+            <img width="300px" height="300px" src="{{ img.image_file.url }}">
+
+        {% endfor %}
+              </div>
+              <div class="detail-box">
+                <h6>
+                  {{ product.title }}
+                </h6>
+                <h6>
+                  Price
+                  <span>
+                    {{ product.price }}
+                  </span>
+                </h6>
+              </div>
+
+              <div class="new">
+                <span>
+                  New
+                </span>
+              </div>
+              </a>
+          </div>
+        </div>
+
+    {% endfor %}

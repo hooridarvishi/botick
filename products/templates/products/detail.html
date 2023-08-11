@@ -3,14 +3,15 @@
 {% load bootstrap5 %}
 {% bootstrap_css %}
 {% bootstrap_javascript %}
-{% block title %}
-    detail
-{% endblock %}
-{% block head %}
-    <h1> جزییات محصول</h1>
-{% endblock %}
+{#{% block title %}#}
+{#    detail#}
+{#{% endblock %}#}
+{#{% block head %}#}
+{#    <h1> جزییات محصول</h1>#}
+{#{% endblock %}#}
 
 {% block content %}
+
     <div class="detail-content">
 
 <div>
@@ -32,18 +33,24 @@
 <h1  class="details-items">{{ product.description }}</h1>
     </div>
   </div>
-  <div class="card-body">
+  <div class="card-header">
                 <div class="title-content">
        <h1> قیمت:</h1>
 <h1  class="details-items">{{ product.price }}تومان</h1>
     </div>
   </div>
-  <div class="card-footer">
-    <div class="author-content">
-<h1 class="author-info">
-    نام فروشنده:<span class="details-items"> {{ product.author }}</span>
-</h1>
-    </div></div>
+{#  <div class="card-footer">#}
+{#    <div class="author-content">#}
+{#<h1 class="author-info">#}
+{#    نام فروشنده:<span class="details-items"> {{ product.author }}</span>#}
+{#</h1>#}
+{#    </div></div>#}
+                  <div class="card-body">
+                <div class="title-content">
+       <h1> نام فروشنده:</h1>
+<h1  class="details-items">{{ product.author }}</h1>
+    </div>
+  </div>
 </div>
     </div>
 {% endblock %}

@@ -1,11 +1,11 @@
-.detail-content{
-      display: flex;
-        justify-content: center;
-        padding-top: 10%;
-    border: inset;
-    margin-left: 20%;
-    margin-right: 20%;
-}
+/*.detail-content{*/
+/*      display: flex;*/
+/*        justify-content: center;*/
+/*        padding-top: 10%;*/
+/*    border: inset;*/
+/*    margin-left: 20%;*/
+/*    margin-right: 20%;*/
+/*}*/
 .author-info{
     padding-left: 20%;
 }
