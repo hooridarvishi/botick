@@ -3,12 +3,12 @@
 
     {% for product in l_products %}
 
-
-          <div class="box">
+         <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box ">
               <a href="{{ product.get_absolute_url }}">
               <div class="img-box">
 
-        {% for img in l_products.images.all %}
+        {% for img in product.images.all %}
 
             <img width="300px" height="300px" src="{{ img.image_file.url }}">
 
@@ -33,6 +33,7 @@
               </div>
               </a>
           </div>
+
         </div>
 
     {% endfor %}

@@ -1,5 +1,5 @@
 from django import forms
-
+from .models import *
 
 class Contact_us(forms.Form):
     SUBJECT_CHOICES = (
@@ -20,3 +20,16 @@ class Contact_us(forms.Form):
                 raise forms.ValidationError("شماره تلفن ، عددی نیست")
             else:
                 return phone
+
+class CommentForm(forms.ModelForm):
+    def clean_name(self):
+        name=self.cleaned_data["name"]
+        if name:
+            if len(name)<3:
+                raise forms.ValidationError("نام کوتاه است")
+            else:
+                return name
+    class Meta:
+        model=CommentModel
+        fields=["name","body"]
+

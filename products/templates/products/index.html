@@ -85,7 +85,7 @@
                       <p>
                         Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
                       </p>
-                      <a href="">
+                      <a href="{% url 'products:contact' %}">
                         Contact Us
                       </a>
                     </div>
@@ -167,7 +167,7 @@
     <!-- end slider section -->
   </div>
   <!-- end hero area -->
-  <section class="shop_section layout_padding">
+  <section class="shop_section layout_padding container">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
@@ -175,10 +175,10 @@
         </h2>
       </div>
       <div class="row">
-           <div class="col-sm-6 col-md-4 col-lg-3">
+
 
           {% latest_products 4 %}
-           </div>
+
 
       </div>
       <div class="btn-box">
@@ -192,7 +192,57 @@
   <!-- end shop section -->
 
   <!-- saving section -->
+  <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+           محبوب ترین محصولات
+        </h2>
+      </div>
 
+        <div class="row">
+            {% most_popular_products 3 as pop_posts %}
+            {%  for product in   pop_posts %}
+         <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="box ">
+              <a href="{{ product.get_absolute_url }}">
+              <div class="img-box">
+
+        {% for img in product.images.all %}
+
+            <img width="300px" height="300px" src="{{ img.image_file.url }}">
+
+        {% endfor %}
+              </div>
+              <div class="detail-box">
+                <h6>
+                  {{ product.title }}
+                </h6>
+                <h6>
+                  Price
+                  <span>
+                    {{ product.price }}
+                  </span>
+                </h6>
+              </div>
+
+              <div class="new">
+                <span>
+                  محبوب
+                </span>
+              </div>
+              </a>
+          </div>
+
+        </div>
+
+{#            </div>#}
+{#        </div>#}
+            {% endfor %}
+{#</div>#}
+        </div>
+    </div>
+  </section>
   <section class="saving_section ">
     <div class="box">
       <div class="container-fluid">

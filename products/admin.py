@@ -19,3 +19,9 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(ImageModel)
 class ImageAdmin(admin.ModelAdmin):
     list_display = ['product', 'created', 'title']
+@admin.register(CommentModel)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['name','product', 'active']
+@admin.register(ContactModel)
+class ContactAdmin(admin.ModelAdmin):
+    list_display = ['name', 'subject', 'email']

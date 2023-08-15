@@ -14,7 +14,7 @@
 
     <div class="detail-content">
 
-<div>
+<div class="detail-image-item">
     {% for img in product.images.all %}
          <img src="{{ img.image_file.url }}">
     {% endfor %}
@@ -22,35 +22,56 @@
     <div class="card">
   <div class="card-header">
           <div class="title-content">
-       <h1> اسم محصول:</h1>
-<h1  class="details-items">{{ product.title }}</h1>
+       <h1 class="title-name-detail-item"> اسم محصول:</h1>
+<h2  class="details-items">{{ product.title }}</h2>
     </div>
     <br>
   </div>
           <div class="card-body">
                 <div class="title-content">
-       <h1> توضیحات:</h1>
-<h1  class="details-items">{{ product.description }}</h1>
+       <h1 class="title-name-detail-item"> توضیحات:</h1>
+<h2  class="details-items">{{ product.description }}</h2>
     </div>
   </div>
   <div class="card-header">
                 <div class="title-content">
-       <h1> قیمت:</h1>
-<h1  class="details-items">{{ product.price }}تومان</h1>
+       <h1 class="title-name-detail-item"> قیمت:</h1>
+<h2  class="details-items">{{ product.price }}تومان</h2>
     </div>
   </div>
-{#  <div class="card-footer">#}
-{#    <div class="author-content">#}
+  <div class="card-footer">
+    <div class="author-content">
 {#<h1 class="author-info">#}
 {#    نام فروشنده:<span class="details-items"> {{ product.author }}</span>#}
 {#</h1>#}
-{#    </div></div>#}
+    </div></div>
                   <div class="card-body">
                 <div class="title-content">
-       <h1> نام فروشنده:</h1>
-<h1  class="details-items">{{ product.author }}</h1>
+       <h1 class="title-name-detail-item"> نام فروشنده:</h1>
+<h2  class="details-items">{{ product.author }}</h2>
     </div>
   </div>
 </div>
     </div>
+    <section class="comment">
+    {% for cm in comments %}
+
+<div class="">
+        {{ cm.name }}   نظر داد :
+</div>
+        <br>
+        {{ cm.body|linebreaks }}
+        <br>
+    {% empty %}
+        کامنتی وجود ندارد
+    {% endfor %}
+
+    </section>
+    <form class="form-comment" method="post" action="{% url 'products:comments_id' product.id %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="افزودن کامنت">
+    </form>
 {% endblock %}
+
+{##}
