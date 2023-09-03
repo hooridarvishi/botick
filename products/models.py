@@ -124,3 +124,16 @@ class CommentModel(models.Model):
 
     def __str__(self):
         return f"{self.name}: {self.product}"
+
+class Account(models.Model):
+
+    user=models.OneToOneField(User,related_name="account",verbose_name="",on_delete=models.CASCADE)
+    date_of_birth=jmodels.jDateField(verbose_name="تاریخ تولد " , blank=True , null=True)
+    bio=models.TextField(verbose_name=" بیوگرافی " , blank=True , null=True)
+    photo=ResizedImageField(upload_to="profile_image/",size=[500 , 500] ,crop=["middle","center"] , quality=60,blank=True , null=True )
+    job=models.CharField(max_length=120,verbose_name=" شغل " , blank=True , null=True)
+    def __str__(self):
+        return self.user.username
+    class Meta:
+        verbose_name="اکانت"
+        verbose_name_plural="اکانت ها "

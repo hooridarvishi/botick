@@ -33,3 +33,7 @@ class CommentAdmin(admin.ModelAdmin):
 @admin.register(ContactModel)
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['body', 'email']
+
+@admin.register(Account)
+class Account(admin.ModelAdmin):
+    list_display =["user","date_of_birth","bio","job","photo"]

@@ -1,5 +1,5 @@
 from django import forms
-from .models import *
+from .models import User,ProductModel,Account
 
 
 # class Contact_us(forms.ModelForm):
@@ -80,3 +80,23 @@ class LoginForm(forms.Form):
 
 
 
+class UserRegisterForm(forms.ModelForm):
+    password=forms.CharField(max_length=120 , widget=forms.PasswordInput , label="password")
+    password2=forms.CharField(max_length=120 , widget=forms.PasswordInput , label="repeat password")
+    class Meta:
+        model=User
+        fields=["username","first_name","last_name","email"]
+    def clean_password2(self):
+        cd=self.cleaned_data
+        if cd["password"] != cd["password2"] :
+            raise forms.ValidationError("مشابهه نیستند")
+        return cd["password2"]
+
+class EditUserForm(forms.ModelForm):
+    class Meta:
+        model=User
+        fields=["first_name","last_name","email"]
+class EditAccountForm(forms.ModelForm):
+    class Meta:
+        model=  Account
+        fields=["user","date_of_birth","bio","job","photo"]
