@@ -18,28 +18,48 @@
         {% block title %}
         {% endblock %}
     </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css'  %}">
+    <link rel="stylesheet" href="{% static 'js/plugin/countdown/countdown.css' %}">
+    <link rel="stylesheet" href="{% static 'js/plugin/quantity/style.css' %}">
+    <link rel="stylesheet" href="{% static 'js/plugin/back-to-top/jquery-backToTop.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/plugin/range/main.min.css' %}">
+    <link rel="stylesheet" href="{% static 'js/plugin/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css\reset.css' %}">
 
-    <script src='{%  static 'js/jquery-3.4.1.min.js' %}' ></script>
-    <script src='{%  static 'js/custom.js' %}'></script>
-    <script src='{%  static 'js/bootstrap.js' %}'></script>
+{#    <script src='{%  static 'js/jquery-3.4.1.min.js' %}' ></script>#}
+{#    <script src='{%  static 'js/custom.js' %}'></script>#}
+{#    <script src='{%  static 'js/bootstrap.js' %}'></script>#}
 {#    <link rel="stylesheet" type="text/css" href='{%  https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css %}' />#}
+{##}
+{#  <!-- bootstrap core css -->#}
+{#    <link rel="stylesheet" type="text/css" href='{% static 'css/bootstrap.css' %}' />#}
+{##}
+{#  <!-- Custom styles for this template -->#}
+{#    <link  rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'  />#}
+{#  <!-- responsive style -->#}
+{#    <link rel="stylesheet"  href='{% static "css/responsive.css" %}'/>#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/products/list.css' %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/products/detail.css' %}">#}
+{##}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">#}
 
-  <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href='{% static 'css/bootstrap.css' %}' />
+                <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
-  <!-- Custom styles for this template -->
-    <link  rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'  />
-  <!-- responsive style -->
-    <link rel="stylesheet"  href='{% static "css/responsive.css" %}'/>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/products/list.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/products/detail.css' %}">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
-        {% block head %}
+ {% block head %}
+
         {% endblock %}
 </head>
 <body>
-{% include "partials/navigation.html" %}
+{% include "partials/header.html" %}
         {% block content %}
         {% endblock %}
 </body>

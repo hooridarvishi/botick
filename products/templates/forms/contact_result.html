@@ -1,0 +1,23 @@
+{% extends 'parent/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block content %}
+    {% if message %}
+
+        ارسال شد
+        <a href="{{ product.get_absolute_url }}">
+        برگشت به محصول
+        </a>
+    {% else %}
+    <form method="post" action="{% url "products:contact" %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="افزودن تیکت">
+    </form>
+    {% endif %}
+
+ {% endblock %}
+
+

@@ -28,14 +28,17 @@ class ProductModel(models.Model):
     publish = jmodels.jDateTimeField(default=timezone.now, verbose_name="تاریخ انتشار")
     created = jmodels.jDateTimeField(auto_now_add=True)
     updated = jmodels.jDateTimeField(auto_now=True)
+
     # choice fields
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT, verbose_name="وضعیت")
     reading_time = models.PositiveIntegerField(verbose_name="زمان مطالعه")
-
+    phone=models.CharField(max_length=20, verbose_name="شماره موبایل" ,  default="")
+    email=models.EmailField(max_length=20, verbose_name="ایمیل" , default="")
     # objects = models.Manager()
     objects = jmodels.jManager()
     published = PublishedManager()
-
+    old_price=models.CharField(max_length=12,default="")
+    discount=models.CharField(max_length=12 , default="")    
     class Meta:
         ordering = ['-publish']
         indexes = [
@@ -54,7 +57,7 @@ class ProductModel(models.Model):
 class ImageModel(models.Model):
     product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, related_name="images")
     image_file = ResizedImageField(upload_to="post_images/", size=[500, 500], quality=75, crop=["middle", "center"])
-    created = models.DateTimeField(auto_now_add=True)
+    created = jmodels.jDateTimeField(auto_now_add=True)
     title = models.CharField(max_length=30, verbose_name="عنوان", null=True, blank=True)
     description = models.TextField(max_length=200, verbose_name="توضیحات", null=True, blank=True)
 
@@ -70,26 +73,48 @@ class ImageModel(models.Model):
         return self.title
 
 
+#
+# class ContactModel(models.Model):
+#     message = models.TextField(verbose_name="پیام")
+#     name = models.CharField(max_length=250, verbose_name="نام")
+#     email = models.EmailField(verbose_name="ایمیل")
+#     phone = models.CharField(max_length=11, verbose_name="شماره تماس")
+#     subject = models.CharField(max_length=250, verbose_name="موضوع")
+#     class Meta:
+#         verbose_name = "راه ارتباطی"
+#         verbose_name_plural="راه های ارتباطی"
+#     def __str__(self):
+#         return self.subject
+
+
 class ContactModel(models.Model):
-    message = models.TextField(verbose_name="پیام")
+
+    body = models.CharField(max_length=120, verbose_name="پیام")
     name = models.CharField(max_length=250, verbose_name="نام")
     email = models.EmailField(verbose_name="ایمیل")
-    phone = models.CharField(max_length=11, verbose_name="شماره تماس")
-    subject = models.CharField(max_length=250, verbose_name="موضوع")
-    class Meta:
-        verbose_name = "راه ارتباطی"
-        verbose_name_plural="راه های ارتباطی"
-    def __str__(self):
-        return self.subject
+    active = models.BooleanField(default=False, verbose_name="وضعیت")
 
+    # class Meta:
+    #     ordering = ["name"],
+    #     indexes = [models.Index(fields=["name"])]
+    #
+    # def __str__(self):
+    #     return self.name
+    #
 
 class CommentModel(models.Model):
     product = models.ForeignKey(ProductModel, on_delete=models.CASCADE, related_name="comments")
-    name = models.CharField(max_length=250, verbose_name="نام")
-    body = models.TextField(verbose_name="متن کامنت")
+    title= models.CharField(max_length=250, verbose_name="عنوان نظر", default="")
+    # name = models.CharField(max_length=250, verbose_name="نام", default="")
+    message_positive_points = models.TextField(max_length=250, verbose_name=" نکات مثبت", default="")
+    message_negative_points=models.TextField(max_length=250, verbose_name=" نکات منفی", default="")
+    message_text=models.TextField(max_length=250, verbose_name=" متن پیام ", default="")
     created = jmodels.jDateTimeField(auto_now_add=True, verbose_name="تاریخ ایجاد")
-    updated = jmodels.jDateTimeField(auto_now=True, verbose_name="تاریخ ویرایش")
+    updated = models.DateTimeField(auto_now=True, verbose_name="تاریخ ویرایش")
     active = models.BooleanField(default=False, verbose_name="وضعیت")
+    email = models.EmailField(max_length=250, verbose_name="ایمیل", default="")
+    # body = models.TextField(max_length=250,verbose_name="متن کامنت" ,default="text")
+    phone = models.TextField(max_length=250, verbose_name=" تلفن", default="")
 
     class Meta:
         ordering = ["created"]

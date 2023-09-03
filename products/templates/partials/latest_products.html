@@ -1,39 +1,85 @@
 {% load static %}
+   <div class="swiper-wrapper">
+                        {% for product in l_products  %}
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-box">
+                                <div class="product-box-item-img">
+{#                                    <a href="">#}
+{#                                        <img src='{% static "img/product/laptop3.jpg"  %}' class="img-fluid">#}
+{#                                    </a>#}
+                                    {% for img in product.images.all %}
+                                        <img  class="img-fluid" src="{{ img.image_file.url }}">
+                                    {% endfor %}
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="{{ product.get_absolute_url }}">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                           {{ product.title }}
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price">
+                                            <div class="d-flex justify-content-between">
+                                                <span
+                                                    class="badge bg-danger rounded-pill text-white my-flex-center">٪48</span>
+                                                <span class="new-price" style="color: #0f8a2e;">{{ product.price }}</span>
+                                            </div>
+                                            <span class="old-price">{{ product.price }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
 
 
-    {% for product in l_products %}
-
-         <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box ">
-              <a href="{{ product.get_absolute_url }}">
-              <div class="img-box">
-
-        {% for img in product.images.all %}
-
-            <img width="300px" height="300px" src="{{ img.image_file.url }}">
-
-        {% endfor %}
-              </div>
-              <div class="detail-box">
-                <h6>
-                  {{ product.title }}
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    {{ product.price }}
-                  </span>
-                </h6>
-              </div>
-
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-              </a>
-          </div>
-
-        </div>
-
-    {% endfor %}
+{#    {% for product in l_products %}#}
+{##}
+{#         <div class="col-sm-6 col-md-4 col-lg-3">#}
+{#          <div class="box ">#}
+{#              <a href="{{ product.get_absolute_url }}">#}
+{#              <div class="img-box">#}
+{##}
+{#        {% for img in product.images.all %}#}
+{##}
+{#            <img width="300px" height="300px" src="{{ img.image_file.url }}">#}
+{##}
+{#        {% endfor %}#}
+{#              </div>#}
+{#              <div class="detail-box">#}
+{#                <h6>#}
+{#                  {{ product.title }}#}
+{#                </h6>#}
+{#                <h6>#}
+{#                  Price#}
+{#                  <span>#}
+{#                    {{ product.price }}#}
+{#                  </span>#}
+{#                </h6>#}
+{#              </div>#}
+{##}
+{#              <div class="new">#}
+{#                <span>#}
+{#                  New#}
+{#                </span>#}
+{#              </div>#}
+{#              </a>#}
+{#          </div>#}
+{##}
+{#        </div>#}
+{##}
+{#    {% endfor %}#}

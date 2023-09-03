@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full products of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import django
+from django.utils.translation import gettext
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+django.utils.translation.ugettext = gettext
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,8 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products.apps.ProductsConfig',
-    'bootstrap5'
+    'bootstrap5',
+    'django_jalali',
+    'django.contrib.postgres',
+    'jquery',
+    'django.contrib.sites',
+    # 'django-owl',
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,14 +81,26 @@ WSGI_APPLICATION = 'botick.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': "BootickData",
+        "USER":"products-admin",
+        "PASSWORD":"admin",
+        "PORT":"5432",
     }
 }
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 
 
 # Password validation
@@ -106,10 +125,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
+LANGUAGE_CODE = 'fa-ir'
+# LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'Asia/Tehran'
+# TIME_ZONE = 'utc'
 USE_I18N = True
 
 USE_TZ = True
@@ -134,3 +153,10 @@ DJANGORESIZED_DEFAULT_KEEP_META = True
 DJANGORESIZED_DEFAULT_FORCE_FORMAT = 'JPEG'
 DJANGORESIZED_DEFAULT_FORMAT_EXTENSIONS = {'JPEG': ".jpg"}
 DJANGORESIZED_DEFAULT_NORMALIZE_ROTATION = False
+# STATICFILES_DIRS=[
+#     os.path.join(BASE_DIR,"static")
+# ]
+LOGIN_REDIRECT_URL = "/blog/profile/"
+LOGIN_URL = "/blog/login/"
+LOGOUT_URL = "/blog/logout/"
+EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend"

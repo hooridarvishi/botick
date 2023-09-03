@@ -3,14 +3,14 @@
 {% block content %}
     {% if comment %}
 کامنت شما ثبت شد
-        <a href="{{ product.get_absolute_url }}">
-        بازگشت به محصول
-        </a>
-    {% else %}
-    <form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input  class="button" type="submit" value="افزودن به کامنت">
+{#        <a href="{{ product.get_absolute_url }}">#}
+{#        بازگشت به محصول#}
+{#        </a>#}
+{#    {% else %}#}
+{#    <form method="POST">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input  class="button" type="submit" value="افزودن به کامنت">#}
     </form>
     {% endif %}
 {% endblock %}

@@ -1,0 +1,18 @@
+{% extends "parent/base.html" %}
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block content %}
+    {% if query %}
+        {{ results.count }}: نتایج جست و جو برای {{ query }}
+    {% endif %}
+    <br/>
+    {% for product in results %}
+        <a href="{{ product.get_absolute_url }}">
+        <p>{{ product.description }}</p>
+        </a>
+    {% empty %}
+        نتیجه ای یافت نشد
+    {% endfor %}
+{% endblock %}

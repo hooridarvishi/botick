@@ -10,793 +10,1994 @@
 
 {% block content %}
 
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-{#        <a class="navbar-brand" href="{{ url 'p' }}">#}
-{#          <span>#}
-{#            Giftos#}
-{#          </span>#}
-{#        </a>#}
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class=""></span>
-        </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url  "products:index" %}" >Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url  "products:index" %}">
-                Shop
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url  "products:index" %}">
-                Why Us
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url  "products:index" %}">
-                Testimonial
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url  "products:contact" %}">Contact Us</a>
-            </li>
-          </ul>
-          <div class="user_option">
-            <a href="">
-              <i class="fa fa-user" aria-hidden="true"></i>
-              <span>
-                Login
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-shopping-bag" aria-hidden="true"></i>
-            </a>
-            <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
+    <div class="home py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 mt-lg-0 mt-3 order-lg-2 order-1">
+                    <div class="swiper homeSlider sugget-Moment">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide rounded-circle">
+                                <a href=""><img src="{% static 'img/slider/slide1-2.jpg' %}" class="img-fluid" alt=""></a>
+                            </div>
+                            <div class="swiper-slide rounded-circle">
+                                <a href=""><img src="{%  static 'img/slider/slide2-2.jpg' %}" class="img-fluid" alt=""></a>
+                            </div>
+                            <div class="swiper-slide rounded-circle">
+                                <a href=""><img src='{% static "img/slider/slide3-1.jpg"%}' class="img-fluid" alt=""></a>
+                            </div>
+                            <div class="swiper-slide rounded-circle">
+                                <a href=""><img src='{% static "img/slider/slide4.jpg" %}' class="img-fluid" alt=""></a>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next d-none d-lg-flex"></div>
+                        <div class="swiper-button-prev d-none d-lg-flex"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                </div>
+                <div class="col-lg-3 mt-lg-0 mt-3 order-lg-1 order-2">
+                    <div class="swiper" id="suggetMoment">
+                        <div class="swiper-wrapper position-relative">
+                            <div class="swiper-slide">
+                                <div class="product-box-item">
+                                    <div class="sugget-title">
+                                        <h6 class="fw-bold">پیشنهاد لحظه ای</h6>
+                                    </div>
+                                    <div class="product-box-item-img">
+                                        <a href="product.html">
+                                            <img src='{% static "img/product/laptop1.jpg" alt %}' class="img-fluid">
+                                        </a>
+
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    تبلت اپل مدل iPad mini 8.3 inch 2021-MK7M3LL/A ظرفیت 64 گیگابایت و 4
+                                                    گیگابایت رم
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="badge bg-danger rounded-pill text-white my-flex-center">٪48</span>
+                                                    <span class="new-price">590,000 تومان</span>
+                                                </div>
+                                                <span class="old-price">1,000,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item">
+                                    <div class="sugget-title">
+                                        <h6 class="fw-bold">پیشنهاد لحظه ای</h6>
+                                    </div>
+                                    <div class="product-box-item-img">
+                                        <a href="product.html">
+                                            <img src='{% static "img/product/product-image3.jpg" %}' class="img-fluid">
+                                        </a>
+
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    تبلت اپل مدل iPad mini 8.3 inch 2021-MK7M3LL/A ظرفیت 64 گیگابایت و 4
+                                                    گیگابایت رم
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price">
+                                                <div class="d-flex justify-content-between">
+                                                    <span
+                                                        class="badge bg-danger rounded-pill text-white my-flex-center">٪48</span>
+                                                    <span class="new-price">590,000 تومان</span>
+                                                </div>
+                                                <span class="old-price">1,000,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item">
+                                    <div class="sugget-title">
+                                        <h6 class="fw-bold">پیشنهاد لحظه ای</h6>
+                                    </div>
+                                    <div class="product-box-item-img">
+                                        <a href="product.html">
+                                            <img src='{% static "img/product/television2.jpg" %}' alt="" class="img-fluid">
+                                        </a>
+
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    تبلت اپل مدل iPad mini 8.3 inch 2021-MK7M3LL/A ظرفیت 64 گیگابایت و 4
+                                                    گیگابایت رم
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price">
+                                                <div class="d-flex justify-content-between">
+                                                    <span
+                                                        class="badge bg-danger rounded-pill text-white my-flex-center">٪48</span>
+                                                    <span class="new-price">590,000 تومان</span>
+                                                </div>
+                                                <span class="old-price">1,000,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item">
+                                    <div class="sugget-title">
+                                        <h6 class="fw-bold">پیشنهاد لحظه ای</h6>
+                                    </div>
+                                    <div class="product-box-item-img">
+                                        <a href="product.html">
+                                            <img src='{% static "img/product/wach3.jpg"  %}' class="img-fluid">
+                                        </a>
+
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    تبلت اپل مدل iPad mini 8.3 inch 2021-MK7M3LL/A ظرفیت 64 گیگابایت و 4
+                                                    گیگابایت رم
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price">
+                                                <div class="d-flex justify-content-between">
+                                                    <span
+                                                        class="badge bg-danger rounded-pill text-white my-flex-center">٪48</span>
+                                                    <span class="new-price">590,000 تومان</span>
+                                                </div>
+                                                <span class="old-price">1,000,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-progress-bar">
+                            <span class="slide_progress-bar"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-    </header>
-    <!-- end header section -->
-    <!-- slider section -->
+    </div>
+    <!-- end main slider -->
 
-    <section class="slider_section">
-      <div class="slider_container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container-fluid">
+    <div class="feature">
+        <div class="container">
+            <div class="row row-cols-5 g-3">
+                <div class="col">
+                    <div class="feture-item shadow-sm">
+                        <div class="feture-icon">
+                            <img width="50" src='{% static "img/icon-1/history.png"  %}' class="img-fluid">
+                        </div>
+                        <div class="feture-desc ms-lg-3 text-center">
+                            <h6>بازگشـت وجـه
+                            </h6>
+                            <p class="text-muted my-2 d-none d-lg-block">در صورت عدم رضایت</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feture-item shadow-sm">
+                        <div class="feture-icon">
+                            <img width="50" src='{% static "img/icon-1/credit-card.png"  %}'alt="" class="img-fluid">
+                        </div>
+                        <div class="feture-desc ms-lg-3 text-center">
+                            <h6>تضمین قیمت
+                            </h6>
+                            <p class="text-muted my-2 d-none d-lg-block">کمترین قیمت بازار
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feture-item shadow-sm">
+                        <div class="feture-icon">
+                            <img width="50" src='{% static "img/icon-1/fast.png"  %}'class="img-fluid">
+                        </div>
+                        <div class="feture-desc ms-lg-3 text-center">
+                            <h6>ارسـال سـریع
+                            </h6>
+                            <p class="text-muted my-2 d-none d-lg-block">امن و مطمئن</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feture-item shadow-sm">
+                        <div class="feture-icon">
+                            <img width="50" src='{% static "img/icon-1/headphone.png"  %}' class="img-fluid">
+                        </div>
+                        <div class="feture-desc ms-lg-3 text-center">
+                            <h6>پشتیبانی عالی
+                            </h6>
+                            <p class="text-muted my-2 d-none d-lg-block">در صورت عدم رضایت</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="feture-item shadow-sm">
+                        <div class="feture-icon">
+                            <img width="50" src='{% static "img/icon-1/badge.png"  %}' class="img-fluid">
+                        </div>
+                        <div class="feture-desc ms-lg-3 text-center">
+                            <h6>اصالت کالا
+                            </h6>
+                            <p class="text-muted my-2 d-none d-lg-block">امن و مطمئن</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end feature -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-4.jpg"  %}' class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-5.jpg"  %}' class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+
+    <div class="offers">
+        <div class="container">
+            <div class="offer">
                 <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Welcome To Our <br>
-                        Gift Shop
-                      </h1>
-                      <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
-                      </p>
-                      <a href="{% url 'products:contact' %}">
-                        Contact Us
-                      </a>
+                    <div class="col-lg-8">
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper"
+                            id="offerItem">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="offer-item">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="offer-discount">
+                                                    <span>٪48 تخفیف</span>
+                                                </div>
+                                                <div class="offer-img">
+                                                    <img src='{% static "img/product/wach1.jpg"  %}' class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="offer-content">
+                                                    <div class="offer-title d-md-inline-block d-none">
+                                                        <h4>پیشنهاد شگفت انگیز <span>فروشگاه</span></h4>
+                                                    </div>
+                                                    <div class="offer-desc">
+                                                        <h4>
+                                                            ساعت هوشمند هوآوی مدل GT2 Pro 46mm بند سیلیکونی
+                                                        </h4>
+                                                        <div class="offer-desc-price">
+                                                            <span class="old">2,000,000 تومان</span>
+                                                            <span class="new">1,300,000 تومان</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='countdown' data-date="2028-01-01" data-time="18:30">
+                                                    </div>
+
+                                                    <div class="offer-btn">
+                                                        <a href="product.html"><i class="bi bi-cart-plus"></i> بریم واسه
+                                                            خرید!</i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="offer-item">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="offer-discount">
+                                                    <span>٪13 تخفیف</span>
+                                                </div>
+                                                <div class="offer-img">
+                                                    <img src='{% static "img/product/wach3.jpg" %}' class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="offer-content">
+                                                    <div class="offer-title d-md-inline-block d-none">
+                                                        <h4>پیشنهاد شگفت انگیز <span>فروشگاه</span></h4>
+                                                    </div>
+                                                    <div class="offer-desc">
+                                                        <h4>
+                                                            ساعت هوشمند هوآوی مدل GT2 Pro 46mm بند سیلیکونی
+                                                        </h4>
+                                                        <div class="offer-desc-price">
+                                                            <span class="old">2,000,000 تومان</span>
+                                                            <span class="new">1,300,000 تومان</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='countdown' data-date="2028-01-01" data-time="18:30">
+                                                    </div>
+
+                                                    <div class="offer-btn">
+                                                        <a href="product.html"><i class="bi bi-cart-plus"></i> بریم واسه
+                                                            خرید!</i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="offer-item">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="offer-discount">
+                                                    <span>٪8 تخفیف</span>
+                                                </div>
+                                                <div class="offer-img">
+                                                    <img src='{% static "img/product/product-image5.jpg" %}' alt="" class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="offer-content">
+                                                    <div class="offer-title d-md-inline-block d-none">
+                                                        <h4>پیشنهاد شگفت انگیز <span>فروشگاه</span></h4>
+                                                    </div>
+                                                    <div class="offer-desc">
+                                                        <h4>
+                                                            ساعت هوشمند هوآوی مدل GT2 Pro 46mm بند سیلیکونی
+                                                        </h4>
+                                                        <div class="offer-desc-price">
+                                                            <span class="old">2,000,000 تومان</span>
+                                                            <span class="new">1,300,000 تومان</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='countdown' data-date="2028-01-01" data-time="18:30">
+                                                    </div>
+
+                                                    <div class="offer-btn">
+                                                        <a href="product.html"><i class="bi bi-cart-plus"></i> بریم واسه
+                                                            خرید!</i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="offer-item">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="offer-discount">
+                                                    <span>٪32 تخفیف</span>
+                                                </div>
+                                                <div class="offer-img">
+                                                    <img src='{% static "img/product/laptop1.jpg"  %}' class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="offer-content">
+                                                    <div class="offer-title d-md-inline-block d-none">
+                                                        <h4>پیشنهاد شگفت انگیز <span>فروشگاه</span></h4>
+                                                    </div>
+                                                    <div class="offer-desc">
+                                                        <h4>
+                                                            ساعت هوشمند هوآوی مدل GT2 Pro 46mm بند سیلیکونی
+                                                        </h4>
+                                                        <div class="offer-desc-price">
+                                                            <span class="old">2,000,000 تومان</span>
+                                                            <span class="new">1,300,000 تومان</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='countdown' data-date="2028-01-01" data-time="18:30">
+                                                    </div>
+
+                                                    <div class="offer-btn">
+                                                        <a href="product.html"><i class="bi bi-cart-plus"></i> بریم واسه
+                                                            خرید!</i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="offer-item">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="offer-discount">
+                                                    <span>٪50 تخفیف</span>
+                                                </div>
+                                                <div class="offer-img">
+                                                    <img src='{% static "img/product/laptop4.jpg" alt %}' class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="offer-content">
+                                                    <div class="offer-title d-md-inline-block d-none">
+                                                        <h4>پیشنهاد شگفت انگیز <span>فروشگاه</span></h4>
+                                                    </div>
+                                                    <div class="offer-desc">
+                                                        <h4>
+                                                            ساعت هوشمند هوآوی مدل GT2 Pro 46mm بند سیلیکونی
+                                                        </h4>
+                                                        <div class="offer-desc-price">
+                                                            <span class="old">2,000,000 تومان</span>
+                                                            <span class="new">1,300,000 تومان</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='countdown' data-date="2028-01-01" data-time="18:30">
+                                                    </div>
+
+                                                    <div class="offer-btn">
+                                                        <a href="product.html"><i class="bi bi-cart-plus"></i> بریم واسه
+                                                            خرید!</i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="offer-item">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="offer-discount">
+                                                    <span>٪48 تخفیف</span>
+                                                </div>
+                                                <div class="offer-img">
+                                                    <img src='{% static "img/product/television2.jpg" %}' alt="" class="img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <div class="offer-content">
+                                                    <div class="offer-title d-md-inline-block d-none">
+                                                        <h4>پیشنهاد شگفت انگیز <span>فروشگاه</span></h4>
+                                                    </div>
+                                                    <div class="offer-desc">
+                                                        <h4>
+                                                            ساعت هوشمند هوآوی مدل GT2 Pro 46mm بند سیلیکونی
+                                                        </h4>
+                                                        <div class="offer-desc-price">
+                                                            <span class="old">2,000,000 تومان</span>
+                                                            <span class="new">1,300,000 تومان</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class='countdown' data-date="2028-01-01" data-time="18:30">
+                                                    </div>
+                                                    <div class="offer-btn">
+                                                        <a href="product.html"><i class="bi bi-cart-plus"></i> بریم واسه
+                                                            خرید!</i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination d-lg-none d-block"></div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <img src="{% static "images/slider-img.png" %}" alt="" />
+                    <div class="col-lg-4 d-lg-block d-none">
+                        <div class="offer-item-link">
+                            <div thumbsSlider="" class="swiper" id="offerItemLink">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="offer-item-link-item shadow-sm">
+                                            <h6>
+                                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
+                                            </h6>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="offer-item-link-item shadow-sm">
+                                            <h6>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h6>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="offer-item-link-item shadow-sm">
+                                            <h6>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h6>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="offer-item-link-item shadow-sm">
+                                            <h6>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h6>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="offer-item-link-item shadow-sm">
+                                            <h6>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h6>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="offer-item-link-item shadow-sm">
+                                            <h6>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
             </div>
-            <div class="carousel-item ">
-              <div class="container-fluid">
+        </div>
+    </div>
+
+    <div class="main-category">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="main-category-title">
+                    <h4>دسته بندی های فروشگاه</h4>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/abzar-khodro.png" %}' alt="" class="img-fluid">
+                            <h6>ابزار خودرو</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/kalaye-degital.png" %}' alt="" class="img-fluid">
+                            <h6>کالای دیجیتال</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/ashpazkhane.png" %}' alt="" class="img-fluid">
+                            <h6>خانه و آشپزخانه</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/autr.png"  %}'alt="" class="img-fluid">
+                            <h6>زیبایی و سلامت</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/boomi.png" %}' alt="" class="img-fluid">
+                            <h6>محصولات بومی و محلی</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/children.png" %}' alt="" class="img-fluid">
+                            <h6>اسباب بازی،کودک و نوزاد</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/lavazem-tahrir.png" %}' alt="" class="img-fluid">
+                            <h6>کتاب ، لوازم تحریر و هنر</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/milk.png"  %}'alt="" class="img-fluid">
+                            <h6>کالاهای سوپر مارکتی</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/mobile.png" %}' alt="" class="img-fluid">
+                            <h6>موبایل</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/poshak.png" %}' alt="" class="img-fluid">
+                            <h6>پوشاک</h6>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-4">
+                    <div class="main-category-item">
+                        <a href="">
+                            <img src='{% static "img/main-category/varzeshi.png" %}' alt="" class="img-fluid">
+                            <h6>ورزش و سفر</h6>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end main main-category -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-1.jpg"  %}' class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+
+    <div class="product-box">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="product-box-title flex-md-column flex-row">
+                        <h2>پیشنهادهای پر تخفیف هفته</h2>
+                        <img src='{% static "img/slider/product-box-img-1.png"  %}'class="img-fluid d-md-block d-none" alt="">
+                        <a href="{% url 'products:products' %}">مشاهده همه <i class="bi bi-chevron-left"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="swiper product-box-items pt-md-0 pt-4 prodcut-box-one-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/laptop1.jpg"  %}' class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/wach3.jpg"  %}'  class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/wach2.jpg" %}' class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/wach1.jpg"  %}' class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/laptop2.jpg"  %}' class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/laptop3.jpg"  %}' class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm">
+                                    <div class="product-box-item-img">
+                                        <a href="">
+                                            <img src='{% static "img/product/laptop4.jpg" alt %}' class="img-fluid">
+                                        </a>
+                                        <div class="product-box-item-hover">
+                                            <div class="product-box-item-hover-btn">
+                                                <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                    data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                        class="bi bi-heart"></i></span>
+                                                <span class="comparison" title="مقایسه محصول"><i
+                                                        class="bi bi-arrow-left-right"></i></span>
+                                            </div>
+                                            <div class="product-box-item-hover-cart">
+                                                <button class="product-box-item-hover-cart-btn"><i
+                                                        class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href="product.html">
+                                        <div class="product-box-item-desc">
+                                            <div class="product-box-item-title">
+                                                <h6>
+                                                    گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                    گیگابایت و رم 6 گیگابایت
+                                                </h6>
+                                            </div>
+                                            <div class="product-box-price default">
+                                                <span class="new-price">590,000 تومان</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="product-box-item shadow-sm see-more-item">
+                                    <div class="see-all">
+                                        <a href="{% url 'products:products' %}">
+                                            <i class="bi bi-arrow-left-circle"></i>
+                                            <p>مشاهده همه</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product box -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-2.jpg"  %}' class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-3.jpg"  %}' class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+
+    <div class="product-box-two">
+        <div class="container">
+            <div class="pbt">
+                <div class="pbt-header">
+                    <div class="pbt-header-title">
+                        <h6>جدیدترین محصولات</h6>
+                    </div>
+
+                    <div class="pbt-header-link">
+                        <a href='{% url "products:products" %}' class="fromCenter border-animate">مشاهده همه</a>
+                    </div>
+                </div>
+                <div class="swiper product-box-two-slider">
+                    {%  latest_products 6 %}
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-box see-more-item">
+                                <div class="see-all">
+                                    <a href="category.html">
+                                        <i class="bi bi-arrow-left-circle"></i>
+                                        <p>مشاهده همه</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next sb2"></div>
+                    <div class="swiper-button-prev sb2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product box two -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-four-1.jpg" %}' alt="" class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-four-2.jpg" %}' alt="" class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-four-3.jpg" %}' alt="" class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-four-4.jpg" %}' alt="" class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+
+    <div class="product-box" style="background: linear-gradient(to left, #1ca7ec, #1f2f98);">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="product-box-title flex-md-column flex-row">
+                        <h2>پر فروشترین محصولات  هفته</h2>
+
+                        <img src='{% static "img/slider/product-box-labtab.png" %}' class="img-fluid d-md-block d-none" alt="">
+                        <a href="{% url 'products:products' %}">مشاهده همه <i class="bi bi-chevron-left"></i></a>
+
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="swiper product-box-items pt-md-0 pt-4 prodcut-box-one-slider">
+                        <div class="swiper-wrapper">
+                            {% most_popular_products 4 as mpp %}
+                                {% for product in mpp %}
+                                <div class="swiper-slide">
+                                    <div class="product-box-item shadow-box">
+
+                                        <div class="product-box-item-img">
+                                         {% for img in product.images.all %}
+                                            <a href="{{ product.get_absolute_url }}">
+
+                                                <img src='{{ img.image_file.url }}' class="img-fluid">
+                                            </a>
+                                         {% endfor %}
+                                            <div class="product-box-item-hover">
+                                                <div class="product-box-item-hover-btn">
+                                                    <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                        data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                                    <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                            class="bi bi-heart"></i></span>
+                                                    <span class="comparison" title="مقایسه محصول"><i
+                                                            class="bi bi-arrow-left-right"></i></span>
+                                                </div>
+                                                <div class="product-box-item-hover-cart">
+                                                    <button class="product-box-item-hover-cart-btn"><i
+                                                            class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="{{ product.get_absolute_url }}">
+                                            <div class="product-box-item-desc">
+                                                <div class="product-box-item-title">
+                                                    <h6>
+                                                      {{ product.title }}
+                                                    </h6>
+                                                </div>
+                                                <div class="product-box-price">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span
+                                                            class="badge bg-danger rounded-pill text-white my-flex-center">٪48</span>
+                                                        <span class="new-price" style="color: #0f8a2e;">{{ product.price }}</span>
+                                                    </div>
+                                                    <span class="old-price">{{ product.price }}</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                <div class="swiper-slide">
+                                    <div class="product-box-item shadow-box see-more-item">
+                                        <div class="see-all">
+                                            <a href="{% url 'products:products' %}">
+                                                <i class="bi bi-arrow-left-circle"></i>
+                                                <p>مشاهده همه</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product box -->
+
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-6.jpg"  %}' class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-item">
+                        <a href="category.html">
+                            <img src='{% static "img/banner/banner-7.jpg"  %}' class="img-fluid shadow-md">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end banner -->
+
+    <div class="product-box-two">
+        <div class="container">
+            <div class="pbt">
+                <div class="pbt-header">
+                    <div class="pbt-header-title">
+                        <h6>جدیدترین ساعت ها</h6>
+                    </div>
+                    <div class="pbt-header-link">
+                        <a href="category.html" class="fromCenter border-animate">مشاهده همه</a>
+                    </div>
+                </div>
+                <div class="swiper product-box-two-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/laptop1.jpg"  %}' class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/wach3.jpg"  %}'  class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/wach2.jpg" alt=" %}' class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/wach1.jpg"  %}' class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/laptop2.jpg" alt %}'="" class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/laptop3.jpg"  %}' class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm">
+                                <div class="product-box-item-img">
+                                    <a href="">
+                                        <img src='{% static "img/product/laptop4.jpg" alt %}' class="img-fluid">
+                                    </a>
+                                    <div class="product-box-item-hover">
+                                        <div class="product-box-item-hover-btn">
+                                            <span class="see-more" title="مشاهده سریع" data-bs-toggle="modal"
+                                                data-bs-target="#productModal"><i class="bi bi-eye"></i></span>
+                                            <span class="favorite" title="افزودن به برگزیده ها"><i
+                                                    class="bi bi-heart"></i></span>
+                                            <span class="comparison" title="مقایسه محصول"><i
+                                                    class="bi bi-arrow-left-right"></i></span>
+                                        </div>
+                                        <div class="product-box-item-hover-cart">
+                                            <button class="product-box-item-hover-cart-btn"><i
+                                                    class="bi bi-cart-plus"></i> افزودن به سبد خرید</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="product.html">
+                                    <div class="product-box-item-desc">
+                                        <div class="product-box-item-title">
+                                            <h6>
+                                                گوشی موبایل اپل مدل iPhone 13 Pro Max A2644 دو سیم‌ کارت ظرفیت 256
+                                                گیگابایت و رم 6 گیگابایت
+                                            </h6>
+                                        </div>
+                                        <div class="product-box-price default">
+                                            <span class="new-price">590,000 تومان</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-box-item shadow-sm see-more-item">
+                                <div class="see-all">
+                                    <a href="category.html">
+                                        <i class="bi bi-arrow-left-circle"></i>
+                                        <p>مشاهده همه</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next sb2"></div>
+                    <div class="swiper-button-prev sb2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product box two -->
+
+    <div class="article-latest">
+        <div class="container">
+            <div class="al">
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="al-header d-flex align-items-center justify-content-between">
+                            <h6 class="fw-bold">آخرین مقالات سایت</h6>
+                            <a href="blog.html" class="fromCenter border-animate">مشاهده همه</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper" id="article">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="al-item">
+                                <div class="al-img">
+                                    <img src='{% static "img/blog/children.jpg"  %}' class="img-fluid" alt="">
+                                </div>
+                                <div class="al-overlay"></div>
+                                <div class="al-date rounded-pill">
+                                    6 مرداد 1401
+                                </div>
+                                <div class="al-title">
+                                    10 نکته مهم درباره تغدیه و سلامت کودکان که باید بدانید
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="blog-detail.html">
+                                <div class="al-item">
+                                    <div class="al-img">
+                                        <img src='{% static "img/blog/01-Yoga-Nidra.jpg"  %}'class="img-fluid" alt="">
+                                    </div>
+                                    <div class="al-overlay"></div>
+                                    <div class="al-date rounded-pill">
+                                        6 مرداد 1401
+                                    </div>
+                                    <div class="al-title">
+                                        10 نکته مهم درباره تغدیه و سلامت کودکان که باید بدانید
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="blog-detail.html">
+                                <div class="al-item">
+                                    <div class="al-img">
+                                        <img src='{% static "img/blog/important-blood-tests.jpg" %}' class="img-fluid" alt="">
+                                    </div>
+                                    <div class="al-overlay"></div>
+                                    <div class="al-date rounded-pill">
+                                        6 مرداد 1401
+                                    </div>
+                                    <div class="al-title">
+                                        10 نکته مهم درباره تغدیه و سلامت کودکان که باید بدانید
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="blog-detail.html">
+                                <div class="al-item">
+                                    <div class="al-img">
+                                        <img src='{% static "img/blog/01-Swimming.jpg"  %}' class="img-fluid" alt="">
+                                    </div>
+                                    <div class="al-overlay"></div>
+                                    <div class="al-date rounded-pill">
+                                        6 مرداد 1401
+                                    </div>
+                                    <div class="al-title">
+                                        10 نکته مهم درباره تغدیه و سلامت کودکان که باید بدانید
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="blog-detail.html">
+                                <div class="al-item">
+                                    <div class="al-img">
+                                        <img src='{% static "img/blog/children.jpg"  %}' class="img-fluid" alt="">
+                                    </div>
+                                    <div class="al-overlay"></div>
+                                    <div class="al-date rounded-pill">
+                                        6 مرداد 1401
+                                    </div>
+                                    <div class="al-title">
+                                        10 نکته مهم درباره تغدیه و سلامت کودکان که باید بدانید
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="blog-detail.html">
+                                <div class="al-item">
+                                    <div class="al-img">
+                                        <img src='{% static "img/blog/01-Yoga-Nidra.jpg"  %}'class="img-fluid" alt="">
+                                    </div>
+                                    <div class="al-overlay"></div>
+                                    <div class="al-date rounded-pill">
+                                        6 مرداد 1401
+                                    </div>
+                                    <div class="al-title">
+                                        10 نکته مهم درباره تغدیه و سلامت کودکان که باید بدانید
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next sb2"></div>
+                    <div class="swiper-button-prev sb2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end article -->
+
+    <div class="partner">
+        <div class="container">
+            <div class="partner-parrent">
+                <div class="partner-title">
+                    <h4 class="text-center my-3">برخی همکاران ما</h4>
+                </div>
+                <div class="swiper partnerSwipper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/brand1.png"  %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/brand2.png"  %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/brand3.png"  %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/brand5.png"  %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/brand7.png"  %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/brand8.png"  %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                        <div class="swiper-slide partner-item">
+                            <a href="#">
+                                <img src='{% static "img/brand/canon.png" %}' class="img-fluid" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next sb2" style="top: 36%;"></div>
+                    <div class="swiper-button-prev sb2" style="top: 36%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end partner -->
+
+    <footer class="shadow-md">
+        <div class="container">
+            <div class="footer-feature">
+                <div class="row justify-content-center">
+                    <div class="col-6 col-sm-2">
+                        <div class="footer-feature-item">
+                            <a href="">
+                                <img src='{% static "img/product-feature/delivery.svg" %}' alt="">
+                            </a>
+                            <h6>تحویل اکسپرس</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-2">
+                        <div class="footer-feature-item">
+                            <a href="">
+                                <img src='{% static "img/product-feature/contact-us.svg" %}' alt="">
+                            </a>
+                            <h6>پشتیبانی 24 ساعته</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-2">
+                        <div class="footer-feature-item">
+                            <a href="">
+                                <img src='{% static "img/product-feature/payment-terms.svg" %}' alt="">
+                            </a>
+                            <h6>پرداخت در محل</h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-2">
+                        <div class="footer-feature-item">
+                            <a href="">
+                                <img src='{% static "img/product-feature/return-policy.svg" %}' alt="">
+                            </a>
+                            <h6>۷ روز ضمانت بازگشت
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="col-6 col-sm-2">
+                        <div class="footer-feature-item">
+                            <a href="">
+                                <img src='{% static "img/product-feature/origin-guarantee.svg" %}' alt="">
+                            </a>
+                            <h6>ضمانت اصل بودن کالا</h6>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer">
                 <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Welcome To Our <br>
-                        Gift Shop
-                      </h1>
-                      <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
-                      </p>
-                      <a href="">
-                        Contact Us
-                      </a>
+                    <div class="col-md-3">
+                        <div class="footer-item">
+                            <h5>راهنمای خرید از مصباح</h5>
+                            <ul class="footer-item-link">
+                                <li><a href="">نحوه ثبت سفارش</a></li>
+                                <li><a href="">رویه ارسال سفارش</a></li>
+                                <li><a href="">شیوه های پرداخت</a></li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <img src="{% static "images/slider-img.png" %}" alt="" />
+                    <div class="col-md-3">
+                        <div class="footer-item">
+                            <h5>خدمات مشتریان</h5>
+                            <ul class="footer-item-link">
+                                <li><a href="">پاسخ به پرسش های متداول</a></li>
+                                <li><a href="">رویه بازگرداندن کالا</a></li>
+                                <li><a href="">شرایط استفاده</a></li>
+                                <li><a href="">حریم خصوصی</a></li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item ">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Welcome To Our <br>
-                        Gift Shop
-                      </h1>
-                      <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
-                      </p>
-                      <a href="">
-                        Contact Us
-                      </a>
+                    <div class="col-md-3">
+                        <div class="footer-item">
+                            <h5>با مصباح</h5>
+                            <ul class="footer-item-link">
+                                <li><a href="">فروش در مصباح</a></li>
+                                <li><a href="">همکاری با سازمان ها</a></li>
+                                <li><a href="">فرصت های شغلی</a></li>
+                                <li><a href="">تماس با مصباح</a></li>
+                                <li><a href="">درباره مصباج</a></li>
+                            </ul>
+                        </div>
                     </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <img src="{% static "images/slider-img.png" %}" alt="" />
+                    <div class="col-md-3">
+                        <div class="footer-item">
+                            <div class="feed">
+                                <h6>از تخفیف‌ها فروشگاه باخبر شوید:
+                                </h6>
+                                <form action="">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control feed-inp"
+                                            placeholder="آدرس ایمیل خود را وارد کنید">
+                                        <button type="submit" class="feed-btn">ارسال</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="social">
+                                <p>ما را در شبکه های اجتماعی دنبال کنید</p>
+                                <div class="social-link">
+                                    <a href="" class="bi bi-instagram"></a>
+                                    <a href="" class="bi bi-twitter"></a>
+                                    <a href="" class="bi bi-whatsapp"></a>
+                                    <a href="" class="bi bi-youtube"></a>
+                                    <a href="" class="bi bi-linkedin"></a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel_btn-box">
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <i class="fa fa-arrow-left" aria-hidden="true"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <img src="{% static "images/line.png" %}" alt="" />
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <i class="fa fa-arrow-right" aria-hidden="true"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- end slider section -->
-  </div>
-  <!-- end hero area -->
-  <section class="shop_section layout_padding container">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Latest Products
-        </h2>
-      </div>
-      <div class="row">
-
-
-          {% latest_products 4 %}
-
-
-      </div>
-      <div class="btn-box">
-        <a href='{% url "products:products" %}'>
-          View All Products
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- end shop section -->
-
-  <!-- saving section -->
-  <section class="shop_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-           محبوب ترین محصولات
-        </h2>
-      </div>
-
-        <div class="row">
-            {% most_popular_products 3 as pop_posts %}
-            {%  for product in   pop_posts %}
-         <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="box ">
-              <a href="{{ product.get_absolute_url }}">
-              <div class="img-box">
-
-        {% for img in product.images.all %}
-
-            <img width="300px" height="300px" src="{{ img.image_file.url }}">
-
-        {% endfor %}
-              </div>
-              <div class="detail-box">
-                <h6>
-                  {{ product.title }}
-                </h6>
-                <h6>
-                  Price
-                  <span>
-                    {{ product.price }}
-                  </span>
-                </h6>
-              </div>
-
-              <div class="new">
-                <span>
-                  محبوب
-                </span>
-              </div>
-              </a>
-          </div>
-
-        </div>
-
-{#            </div>#}
-{#        </div>#}
-            {% endfor %}
-{#</div>#}
-        </div>
-    </div>
-  </section>
-  <section class="saving_section ">
-    <div class="box">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="img-box">
-              <img src="images/saving-img.png" alt="">
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="detail-box">
-              <div class="heading_container">
-                <h2>
-                  Best Savings on <br>
-                  new arrivals
-                </h2>
-              </div>
-              <p>
-                Qui ex dolore at repellat, quia neque doloribus omnis adipisci, ipsum eos odio fugit ut eveniet blanditiis praesentium totam non nostrum dignissimos nihil eius facere et eaque. Qui, animi obcaecati.
-              </p>
-              <div class="btn-box">
-                <a href="#" class="btn1">
-                  Buy Now
-                </a>
-                <a href="#" class="btn2">
-                  See More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end saving section -->
-
-  <!-- why section -->
-
-  <section class="why_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Why Shop With Us
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="box ">
-            <div class="img-box">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path d="M476.158,231.363l-13.259-53.035c3.625-0.77,6.345-3.986,6.345-7.839v-8.551c0-18.566-15.105-33.67-33.67-33.67h-60.392
-                 V110.63c0-9.136-7.432-16.568-16.568-16.568H50.772c-9.136,0-16.568,7.432-16.568,16.568V256c0,4.427,3.589,8.017,8.017,8.017
-                 c4.427,0,8.017-3.589,8.017-8.017V110.63c0-0.295,0.239-0.534,0.534-0.534h307.841c0.295,0,0.534,0.239,0.534,0.534v145.372
-                 c0,4.427,3.589,8.017,8.017,8.017c4.427,0,8.017-3.589,8.017-8.017v-9.088h94.569c0.008,0,0.014,0.002,0.021,0.002
-                 c0.008,0,0.015-0.001,0.022-0.001c11.637,0.008,21.518,7.646,24.912,18.171h-24.928c-4.427,0-8.017,3.589-8.017,8.017v17.102
-                 c0,13.851,11.268,25.119,25.119,25.119h9.086v35.273h-20.962c-6.886-19.883-25.787-34.205-47.982-34.205
-                 s-41.097,14.322-47.982,34.205h-3.86v-60.393c0-4.427-3.589-8.017-8.017-8.017c-4.427,0-8.017,3.589-8.017,8.017v60.391H192.817
-                 c-6.886-19.883-25.787-34.205-47.982-34.205s-41.097,14.322-47.982,34.205H50.772c-0.295,0-0.534-0.239-0.534-0.534v-17.637
-                 h34.739c4.427,0,8.017-3.589,8.017-8.017s-3.589-8.017-8.017-8.017H8.017c-4.427,0-8.017,3.589-8.017,8.017
-                 s3.589,8.017,8.017,8.017h26.188v17.637c0,9.136,7.432,16.568,16.568,16.568h43.304c-0.002,0.178-0.014,0.355-0.014,0.534
-                 c0,27.996,22.777,50.772,50.772,50.772s50.772-22.776,50.772-50.772c0-0.18-0.012-0.356-0.014-0.534h180.67
-                 c-0.002,0.178-0.014,0.355-0.014,0.534c0,27.996,22.777,50.772,50.772,50.772c27.995,0,50.772-22.776,50.772-50.772
-                 c0-0.18-0.012-0.356-0.014-0.534h26.203c4.427,0,8.017-3.589,8.017-8.017v-85.511C512,251.989,496.423,234.448,476.158,231.363z
-                  M375.182,144.301h60.392c9.725,0,17.637,7.912,17.637,17.637v0.534h-78.029V144.301z M375.182,230.881v-52.376h71.235
-                 l13.094,52.376H375.182z M144.835,401.904c-19.155,0-34.739-15.583-34.739-34.739s15.584-34.739,34.739-34.739
-                 c19.155,0,34.739,15.583,34.739,34.739S163.99,401.904,144.835,401.904z M427.023,401.904c-19.155,0-34.739-15.583-34.739-34.739
-                 s15.584-34.739,34.739-34.739c19.155,0,34.739,15.583,34.739,34.739S446.178,401.904,427.023,401.904z M495.967,299.29h-9.086
-                 c-5.01,0-9.086-4.076-9.086-9.086v-9.086h18.171V299.29z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M144.835,350.597c-9.136,0-16.568,7.432-16.568,16.568c0,9.136,7.432,16.568,16.568,16.568
-                 c9.136,0,16.568-7.432,16.568-16.568C161.403,358.029,153.971,350.597,144.835,350.597z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M427.023,350.597c-9.136,0-16.568,7.432-16.568,16.568c0,9.136,7.432,16.568,16.568,16.568
-                 c9.136,0,16.568-7.432,16.568-16.568C443.591,358.029,436.159,350.597,427.023,350.597z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M332.96,316.393H213.244c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017H332.96
-                 c4.427,0,8.017-3.589,8.017-8.017S337.388,316.393,332.96,316.393z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M127.733,282.188H25.119c-4.427,0-8.017,3.589-8.017,8.017s3.589,8.017,8.017,8.017h102.614
-                 c4.427,0,8.017-3.589,8.017-8.017S132.16,282.188,127.733,282.188z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M278.771,173.37c-3.13-3.13-8.207-3.13-11.337,0.001l-71.292,71.291l-37.087-37.087c-3.131-3.131-8.207-3.131-11.337,0
-                 c-3.131,3.131-3.131,8.206,0,11.337l42.756,42.756c1.565,1.566,3.617,2.348,5.668,2.348s4.104-0.782,5.668-2.348l76.96-76.96
-                 C281.901,181.576,281.901,176.501,278.771,173.37z" />
-                  </g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-              </svg>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Fast Delivery
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="box ">
-            <div class="img-box">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 490.667 490.667" style="enable-background:new 0 0 490.667 490.667;" xml:space="preserve">
-                <g>
-                  <g>
-                    <path d="M138.667,192H96c-5.888,0-10.667,4.779-10.667,10.667V288c0,5.888,4.779,10.667,10.667,10.667s10.667-4.779,10.667-10.667
-                 v-74.667h32c5.888,0,10.667-4.779,10.667-10.667S144.555,192,138.667,192z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M117.333,234.667H96c-5.888,0-10.667,4.779-10.667,10.667S90.112,256,96,256h21.333c5.888,0,10.667-4.779,10.667-10.667
-                 S123.221,234.667,117.333,234.667z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M245.333,0C110.059,0,0,110.059,0,245.333s110.059,245.333,245.333,245.333s245.333-110.059,245.333-245.333
-                 S380.608,0,245.333,0z M245.333,469.333c-123.52,0-224-100.48-224-224s100.48-224,224-224s224,100.48,224,224
-                 S368.853,469.333,245.333,469.333z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M386.752,131.989C352.085,88.789,300.544,64,245.333,64s-106.752,24.789-141.419,67.989
-                 c-3.691,4.587-2.965,11.307,1.643,14.997c4.587,3.691,11.307,2.965,14.976-1.643c30.613-38.144,76.096-60.011,124.8-60.011
-                 s94.187,21.867,124.779,60.011c2.112,2.624,5.205,3.989,8.32,3.989c2.368,0,4.715-0.768,6.677-2.347
-                 C389.717,143.296,390.443,136.576,386.752,131.989z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M376.405,354.923c-4.224-4.032-11.008-3.861-15.061,0.405c-30.613,32.235-71.808,50.005-116.011,50.005
-                 s-85.397-17.771-115.989-50.005c-4.032-4.309-10.816-4.437-15.061-0.405c-4.309,4.053-4.459,10.816-0.405,15.083
-                 c34.667,36.544,81.344,56.661,131.456,56.661s96.789-20.117,131.477-56.661C380.864,365.739,380.693,358.976,376.405,354.923z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M206.805,255.723c15.701-2.027,27.861-15.488,27.861-31.723c0-17.643-14.357-32-32-32h-21.333
-                 c-5.888,0-10.667,4.779-10.667,10.667v42.581c0,0.043,0,0.107,0,0.149V288c0,5.888,4.779,10.667,10.667,10.667
-                 S192,293.888,192,288v-16.917l24.448,24.469c2.091,2.069,4.821,3.115,7.552,3.115c2.731,0,5.461-1.045,7.531-3.136
-                 c4.16-4.16,4.16-10.923,0-15.083L206.805,255.723z M192,234.667v-21.333h10.667c5.867,0,10.667,4.779,10.667,10.667
-                 s-4.8,10.667-10.667,10.667H192z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M309.333,277.333h-32v-64h32c5.888,0,10.667-4.779,10.667-10.667S315.221,192,309.333,192h-42.667
-                 c-5.888,0-10.667,4.779-10.667,10.667V288c0,5.888,4.779,10.667,10.667,10.667h42.667c5.888,0,10.667-4.779,10.667-10.667
-                 S315.221,277.333,309.333,277.333z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M288,234.667h-21.333c-5.888,0-10.667,4.779-10.667,10.667S260.779,256,266.667,256H288
-                 c5.888,0,10.667-4.779,10.667-10.667S293.888,234.667,288,234.667z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M394.667,277.333h-32v-64h32c5.888,0,10.667-4.779,10.667-10.667S400.555,192,394.667,192H352
-                 c-5.888,0-10.667,4.779-10.667,10.667V288c0,5.888,4.779,10.667,10.667,10.667h42.667c5.888,0,10.667-4.779,10.667-10.667
-                 S400.555,277.333,394.667,277.333z" />
-                  </g>
-                </g>
-                <g>
-                  <g>
-                    <path d="M373.333,234.667H352c-5.888,0-10.667,4.779-10.667,10.667S346.112,256,352,256h21.333
-                 c5.888,0,10.667-4.779,10.667-10.667S379.221,234.667,373.333,234.667z" />
-                  </g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-                <g>
-                </g>
-              </svg>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Free Shiping
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="box ">
-            <div class="img-box">
-              <svg id="_30_Premium" height="512" viewBox="0 0 512 512" width="512" xmlns="http://www.w3.org/2000/svg" data-name="30_Premium">
-                <g id="filled">
-                  <path d="m252.92 300h3.08a124.245 124.245 0 1 0 -4.49-.09c.075.009.15.023.226.03.394.039.789.06 1.184.06zm-96.92-124a100 100 0 1 1 100 100 100.113 100.113 0 0 1 -100-100z" />
-                  <path d="m447.445 387.635-80.4-80.4a171.682 171.682 0 0 0 60.955-131.235c0-94.841-77.159-172-172-172s-172 77.159-172 172c0 73.747 46.657 136.794 112 161.2v158.8c-.3 9.289 11.094 15.384 18.656 9.984l41.344-27.562 41.344 27.562c7.574 5.4 18.949-.7 18.656-9.984v-70.109l46.6 46.594c6.395 6.789 18.712 3.025 20.253-6.132l9.74-48.724 48.725-9.742c9.163-1.531 12.904-13.893 6.127-20.252zm-339.445-211.635c0-81.607 66.393-148 148-148s148 66.393 148 148-66.393 148-148 148-148-66.393-148-148zm154.656 278.016a12 12 0 0 0 -13.312 0l-29.344 19.562v-129.378a172.338 172.338 0 0 0 72 0v129.38zm117.381-58.353a12 12 0 0 0 -9.415 9.415l-6.913 34.58-47.709-47.709v-54.749a171.469 171.469 0 0 0 31.467-15.6l67.151 67.152z" />
-                  <path d="m287.62 236.985c8.349 4.694 19.251-3.212 17.367-12.618l-5.841-35.145 25.384-25c7.049-6.5 2.89-19.3-6.634-20.415l-35.23-5.306-15.933-31.867c-4.009-8.713-17.457-8.711-21.466 0l-15.933 31.866-35.23 5.306c-9.526 1.119-13.681 13.911-6.634 20.415l25.384 25-5.841 35.145c-1.879 9.406 9 17.31 17.367 12.618l31.62-16.414zm-53-32.359 2.928-17.615a12 12 0 0 0 -3.417-10.516l-12.721-12.531 17.658-2.66a12 12 0 0 0 8.947-6.5l7.985-15.971 7.985 15.972a12 12 0 0 0 8.947 6.5l17.658 2.66-12.723 12.535a12 12 0 0 0 -3.417 10.516l2.928 17.615-15.849-8.231a12 12 0 0 0 -11.058 0z" />
-                </g>
-              </svg>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Best Quality
-              </h5>
-              <p>
-                variations of passages of Lorem Ipsum available
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end why section -->
-
-
-  <!-- gift section -->
-
-  <section class="gift_section layout_padding-bottom">
-    <div class="box ">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-5">
-            <div class="img_container">
-              <div class="img-box">
-                <img src="images/gifts.png" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="col-md-7">
-            <div class="detail-box">
-              <div class="heading_container">
-                <h2>
-                  Gifts for your <br>
-                  loved ones
-                </h2>
-              </div>
-              <p>
-                Omnis ex nam laudantium odit illum harum, excepturi accusamus at corrupti, velit blanditiis unde perspiciatis, vitae minus culpa? Beatae at aut consequuntur porro adipisci aliquam eaque iste ducimus expedita accusantium?
-              </p>
-              <div class="btn-box">
-                <a href="#" class="btn1">
-                  Buy Now
-                </a>
-                <a href="#" class="btn2">
-                  See More
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- end gift section -->
-
-
-  <!-- contact section -->
-
-  <section class="contact_section ">
-    <div class="container px-0">
-      <div class="heading_container ">
-        <h2 class="">
-          Contact Us
-        </h2>
-      </div>
-    </div>
-    <div class="container container-bg">
-      <div class="row">
-        <div class="col-lg-7 col-md-6 px-0">
-          <div class="map_container">
-            <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-5 px-0">
-          <form action="#">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                SEND
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end contact section -->
-
-  <!-- client section -->
-  <section class="client_section layout_padding">
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Testimonial
-        </h2>
-      </div>
-    </div>
-    <div class="container px-0">
-      <div id="customCarousel2" class="carousel  carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    Morijorch
-                  </h5>
-                  <h6>
-                    Default model text
-                  </h6>
+                <div class="footer-desc">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="footer-desc-item">
+                                <h3>فروشگاه مصباح ، بررسی ، انتخاب و خرید آنلاین</h3>
+                                <p class="text-muted">
+                                    یک خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و
+                                    دارای قیمت مناسب را در مدت زمانی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا
+                                    هم داشته باشد؛ ویژگی‌هایی که فروشگاه اینترنتی مصباح سال‌هاست بر روی آن‌ها کار کرده و
+                                    توانسته از این طریق مشتریان ثابت خود را داشته باشد
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="footer-desc-item">
+                                <ul class="d-flex justify-content-md-end justify-content-center">
+                                    <li><a href=""><img src='{% static "img/default-icon/enamad.png" %}' ></a></li>
+                                    <li><a href=""><img src='{% static "img/default-icon/kasbokar.png" %}' ></a></li>
+                                    <li><a href=""><img src='{% static "img/default-icon/rezi.png"  %}' ></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-              </p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    Rochak
-                  </h5>
-                  <h6>
-                    Default model text
-                  </h6>
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-              </p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="box">
-              <div class="client_info">
-                <div class="client_name">
-                  <h5>
-                    Brad Johns
-                  </h5>
-                  <h6>
-                    Default model text
-                  </h6>
-                </div>
-                <i class="fa fa-quote-left" aria-hidden="true"></i>
-              </div>
-              <p>
-                Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy, editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various
-              </p>
-            </div>
-          </div>
         </div>
-        <div class="carousel_btn-box">
-          <a class="carousel-control-prev" href="#customCarousel2" role="button" data-slide="prev">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#customCarousel2" role="button" data-slide="next">
-            <i class="fa fa-angle-right" aria-hidden="true"></i>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end client section -->
-
-  <!-- info section -->
-
-  <section class="info_section  layout_padding2-top">
-    <div class="social_container">
-      <div class="social_box">
-        <a href="">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-      </div>
-    </div>
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              ABOUT US
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <div class="info_form ">
-              <h5>
-                Newsletter
-              </h5>
-              <form action="#">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              NEED HELP
-            </h6>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
-            </p>
-          </div>
-          <div class="col-md-6 col-lg-3">
-            <h6>
-              CONTACT US
-            </h6>
-            <div class="info_link-box">
-              <a href="">
-                <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
-              </a>
-              <a href="">
-                <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+01 12345678901</span>
-              </a>
-              <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> demo@gmail.com</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- footer section -->
-    <footer class=" footer_section">
-      <div class="container">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a>
-        </p>
-      </div>
     </footer>
-    <!-- footer section -->
+    <!-- end footer -->
 
-  </section>
+    <div class="copy-right">
+        <p class="text-muted text-center">برای استفاده از مطالب فروشگاه، داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست. تمام
+            حقوق اين وب‌سايت نیز برای شرکت مصباح است.
+        </p>
+    </div>
+    <!-- end copy right -->
 
-  <!-- end info section -->
+    <!-- Modal -->
+    <div class="modal fade modal-lg product-modal" id="productModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <a href="">
+                            <div class="d-flex">
+                                <i class="bi bi-bag-plus me-1"></i>
+                                <h4>گوشی موبابل شیائومی مدل 12x2002548 دو سیم کارت ظرفیت 256 گیگابایت و رم 8 گیگابایت
+                                </h4>
+                            </div>
+                        </a>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-md-0 mb-2">
+                            <div class="swiper product-modal">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src='{% static "img/product/laptop(1).png" %}' alt="" class="img-fluid">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src='{% static "img/product/watch.png" %}'alt="" class="img-fluid">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src='{% static "img/product/mobile.png"%}' alt="" class="img-fluid">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src='{% static "img/product/shirt1.jpg"%}' alt="" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="swiper-button-next sb"></div>
+                                <div class="swiper-button-prev sb"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="product-modal-detail">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <span class="product-meta-item text-muted">
+                                            <i class="bi bi-tag"></i>
+                                            مدل:
+                                            <a href="">شیائومی</a>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="product-meta-item text-muted">
+                                            <i class="bi bi-tag"></i>
+                                            دسته بندی:
+                                            <a href="">کالای دیجیتال</a>,
+                                            <a href="">تلفن همراه</a>,
+                                            <a href="">شیائومی</a>,
+                                            <a href="">ارزان کالا</a>,
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="product-meta-item text-muted">
+                                            <i class="bi bi-shield-check"></i>
+                                            گارانتی:
+                                            <span>گارانتی 18 ماهه گرین</span>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <span class="product-meta-item text-muted">
+                                            <i class="bi bi-tag"></i>
+                                            برچسب:
+                                            <a href="">کالای دیجیتال</a>,
+                                            <a href="">تلفن همراه</a>,
+                                            <a href="">شیائومی</a>,
+                                            <a href="">ارزان کالا</a>,
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-modal-feature">
+                                <strong>ویژگی های محصول:</strong>
+                                <ul>
+                                    <li>
+                                        <span class="title">سری پردازنده:</span>
+                                        <span class="desc">Core i7</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">مقدار رم:</span>
+                                        <span class="desc">16 گیگابایت</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">حافظه داخلی:</span>
+                                        <span class="desc">512 گیگابایت</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">شبکه های ارتباطی:</span>
+                                        <span class="desc">بدون سیم کارت</span>
+                                    </li>
+                                    <li>
+                                        <span class="title">رابط ها:</span>
+                                        <span class="desc">جک 3.5 میلیمتری صدا</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="product-modal-price">
+                                <span class="old">1,800,000 تومان</span>
+                                <span class="new">730,000 تومان</span>
+                            </div>
+                            <div class="product-modal-link">
+                                <form action="">
+                                    <div>
+                                        <input type="text" name="count" class="counter" value="1" style="width: 70px;">
+                                    </div>
+                                    <button type="submit" class="btnx btnx-default ms-3"><i class="bi bi-cart-plus"></i>
+                                        افزودن به سبد خرید</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end product modal-->
+
+    <div class="modal fade login-modal" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        <div class="d-flex">
+                            <i class="bi bi-person me-1"></i>
+                            <h6 class="text-center">فرم ورود کاربران</h6>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="item">
+                        <form action="">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                                    <input type="text" class="form-control" placeholder="نام کاربری">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-key"></i></span>
+                                    <input type="password" placeholder="رمز عبور" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-check form-check-box">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    مرا فراموش نکن
+                                </label>
+                            </div>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="submit" class="btn-login me-2"><i class="bi bi-person"></i> ورود به
+                                    سایت</button>
+                                <a class="btn-login forget" href="forget.html"><i class="bi bi-person"></i>
+                                    فراموشی رمز عبور
+                                </a>
+                            </div>
+
+                        </form>
+                        <div class="register-box">
+                            <div class="dash-border">
+                                <span>یا</span>
+                            </div>
+                            <div class="register-link">
+                                <a href="register.html" class="btn btn-outline-secondary">ثبت نام <i
+                                        class="bi bi-person-plus ms-1"></i></a>
+                            </div>
+                        </div>
+                        <div class="social">
+                            <a href="" class="bi bi-google"></a>
+                            <a href="" class="bi bi-facebook"></a>
+                            <a href="" class="bi bi-github"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end login modal -->
+
+    <div class="cart-slides" id="cartSlide">
+        <div class="cart-slide-overlay"></div>
+        <div class="cart-slide col-md-5 col-lg-3 col-sm-6 col-8">
+            <div class="cart-slide-title">
+                <h6>سبد خرید</h6>
+                <i class="bi bi-x-lg" id="cartSlideColse"></i>
+            </div>
+            <div class="cart-slide-desc">
+                <div class="empty-cart d-none">
+                    <img src='{% static "img/other/cart-empty.png" %}' alt="" class="img-fluid">
+                    <h6>سبد خرید خالی میباشد</h6>
+                </div>
+                <div class="cart-product">
+                    <div class="title">
+                        <div class="d-flex align-items-center">
+                            <img src='{% static "img/product/laptop1.jpg" %}' alt="">
+                            <h6 class="fw-bold text-start">تبلت مایکروسافت مدل Surface Pro 8 - F ظرفیت 512 گیگابایت</h6>
+                            <i class="bi bi-x-circle-fill pointer text-muted"></i>
+                        </div>
+                        <div class="count">
+                            <span>1 ×</span>
+                            <span>5,500,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="title">
+                        <div class="d-flex align-items-center">
+                            <img src='{% static "img/product/wach4.jpg" %}'alt="">
+                            <h6 class="fw-bold text-start">ساعت هوشمند هوآوی مدل Watch 3 بند سیلیکونی</h6>
+                            <i class="bi bi-x-circle-fill pointer text-muted"></i>
+                        </div>
+                        <div class="count">
+                            <span>1 ×</span>
+                            <span>750,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-product">
+                    <div class="title">
+                        <div class="d-flex align-items-center">
+                            <img src='{% static "img/product/wach4.jpg" %}'alt="">
+                            <h6 class="fw-bold text-start">ساعت هوشمند هوآوی مدل Watch 3 بند سیلیکونی</h6>
+                            <i class="bi bi-x-circle-fill pointer text-muted"></i>
+                        </div>
+                        <div class="count">
+                            <span>1 ×</span>
+                            <span>750,000 تومان</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-price">
+                <div class="cart-price-count">
+                    <span>مجموع :</span>
+                    <span> 63,000,000 تومان</span>
+                </div>
+                <div class="cart-price-btn">
+                    <a href="" class="btn-main">مشاهده سبد خرید</a>
+                    <a href="" class="btn-outline">تسویه حساب</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end cart slide -->
 
 
-{#  <script src="js/jquery-3.4.1.min.js"></script>#}
-{#  <script src="js/bootstrap.js"></script>#}
-{#  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">#}
-{#  </script>#}
-{#  <script src="js/custom.js"></script>#}
+    <script src='{% static "js/jquery-3.6.1.min.js"%}'></script>
+    <script src='{% static "js/bootstrap.bundle.min.js" %}'></script>
+    <script src='{% static "js/swiper-bundle.min.js" %}'></script>
+    <script src='{% static "js/app.js" %}'></script>
+    <script src='{% static "js/plugin/countdown/countdown.js" %}'></script>
+    <script src='{% static "js/plugin/range/jQuery.inputSliderRange.min.js" %}'></script>
+    <script src='{% static "js/plugin/back-to-top/jquery-backToTop.min.js" %}'></script>
+    <script src='{% static "js/plugin/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js" %}'></script>
+    <script src='{% static "js/jquery-app.js" %}'></script>
+
+
 
 
 
