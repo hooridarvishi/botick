@@ -4,7 +4,8 @@ from django.urls import path
 app_name="products"
 urlpatterns=[
     path("", views.index, name="index"),
-    path("list",views.ProductListView.as_view() , name="products") ,
+    path("list/", views.ProductListView, name="products"),
+    path("list/<str:category>",views.ProductListView , name="products_category") ,
     path("products/<pk>",views.productDetailView , name="detail"),
     path("contact",views.contactView ,name="contact" ),
     # path("products/<product_id>/comment",views.product_comment,name="comments_id"),
@@ -23,5 +24,6 @@ urlpatterns=[
     path("password-reset/<uidb64>/<token>/",auth_views.PasswordResetConfirmView.as_view(success_url="/products/password-reset/complete"),name="password_reset_confirm"),
     path("password-reset/complete",auth_views.PasswordResetCompleteView.as_view(),name="password_reset_complete"),
     path("register/",views.register,name="register"),
-    path("account/edit",views.edit_account , name="edit_account")
+    path("account/edit",views.edit_account , name="edit_account"),
+
 ]

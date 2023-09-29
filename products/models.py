@@ -2,9 +2,19 @@ from django.db import models
 from django_resized import ResizedImageField
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django_jalali.db import models as jmodels
 from django.urls import reverse
+from django.contrib.auth.models import AbstractUser
+
+
+
+class User(AbstractUser):
+    date_of_birth=models.DateField(verbose_name="تاریخ تولد " , blank=True , null=True)
+    bio=models.TextField(verbose_name="بیوگرافی" , blank=True , null=True)
+    photo=models.ImageField(upload_to="profile_image/" , blank=True , null=True)
+    job = models.CharField(max_length=120, verbose_name=" شغل ", blank=True, null=True)
+    phone=models.CharField(max_length=11)
 
 
 class PublishedManager(models.Manager):
@@ -17,7 +27,12 @@ class ProductModel(models.Model):
         DRAFT = 'DF', 'Draft'
         PUBLISHED = 'PB', 'Published'
         REJECTED = 'RJ', 'Rejected'
-
+    CATEGORY_CHOICES=(
+        ("کلاه","کلاه"),
+        ("عینک","عینک"),
+        ("وسایل خانه","وسایل خانه")
+    )
+    category=models.CharField(max_length=12 , default="کلاه" , choices=CATEGORY_CHOICES)
     # relations
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts", verbose_name="نویسنده")
     # data fields
@@ -32,8 +47,6 @@ class ProductModel(models.Model):
     # choice fields
     status = models.CharField(max_length=2, choices=Status.choices, default=Status.DRAFT, verbose_name="وضعیت")
     reading_time = models.PositiveIntegerField(verbose_name="زمان مطالعه")
-    phone=models.CharField(max_length=20, verbose_name="شماره موبایل" ,  default="")
-    email=models.EmailField(max_length=20, verbose_name="ایمیل" , default="")
     # objects = models.Manager()
     objects = jmodels.jManager()
     published = PublishedManager()
@@ -125,15 +138,15 @@ class CommentModel(models.Model):
     def __str__(self):
         return f"{self.name}: {self.product}"
 
-class Account(models.Model):
-
-    user=models.OneToOneField(User,related_name="account",verbose_name="",on_delete=models.CASCADE)
-    date_of_birth=jmodels.jDateField(verbose_name="تاریخ تولد " , blank=True , null=True)
-    bio=models.TextField(verbose_name=" بیوگرافی " , blank=True , null=True)
-    photo=ResizedImageField(upload_to="profile_image/",size=[500 , 500] ,crop=["middle","center"] , quality=60,blank=True , null=True )
-    job=models.CharField(max_length=120,verbose_name=" شغل " , blank=True , null=True)
-    def __str__(self):
-        return self.user.username
-    class Meta:
-        verbose_name="اکانت"
-        verbose_name_plural="اکانت ها "
+# class Account(models.Model):
+#
+#     user=models.OneToOneField(User,related_name="account",verbose_name="",on_delete=models.CASCADE)
+#     date_of_birth=jmodels.jDateField(verbose_name="تاریخ تولد " , blank=True , null=True)
+#     bio=models.TextField(verbose_name=" بیوگرافی " , blank=True , null=True)
+#     photo=ResizedImageField(upload_to="profile_image/",size=[500 , 500] ,crop=["middle","center"] , quality=60,blank=True , null=True )
+#     job=models.CharField(max_length=120,verbose_name=" شغل " , blank=True , null=True)
+#     def __str__(self):
+#         return self.user.username
+#     class Meta:
+#         verbose_name="اکانت"
+#         verbose_name_plural="اکانت ها "

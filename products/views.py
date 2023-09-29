@@ -12,12 +12,26 @@ def index(request):
 
     return render(request, "products/index.html")
 
+def ProductListView(request,category=None):
+    if category is None:
+        products=ProductModel.published.filter(category=category)
+    else:
+        products =ProductModel.objects.all()
 
-class ProductListView(ListView):
-    template_name = 'products/list.html'
-    context_object_name = "products"
-    queryset = ProductModel.published.all()
-    paginate_by = 6
+
+    context = {
+        'products': products,
+        "category":category
+    }
+    return render(request, "products/list.html", context)
+
+
+
+# class ProductListView(ListView):
+#     template_name = 'products/list.html'
+#     context_object_name = "products"
+#     queryset = ProductModel.published.all()
+#     paginate_by = 6
 
 
 def productDetailView(request, pk):
@@ -143,9 +157,10 @@ def search_products_view(request):
 #     return render(request, "forms/contact_result.html", context)
 @login_required
 def profile(request):
+    user_=Users.objects.all
     user=request.user
     products=ProductModel.published.filter(author=user)
-    return render(request,"products/profile.html",{"products":products})
+    return render(request,"products/profile.html",{"products":products , "user":user , "user_":user_})
 
 @login_required
 def create_products(request):
@@ -217,7 +232,7 @@ def register(request):
             user=form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            Account.objects.create(user=user)
+            # Account.objects.create(user=user)
             return render(request, "registration/register_done.html", {"user":user})
 
     else:

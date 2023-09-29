@@ -1,5 +1,5 @@
 from django import forms
-from .models import User,ProductModel,Account
+from .models import User,ProductModel
 
 
 # class Contact_us(forms.ModelForm):
@@ -98,5 +98,5 @@ class EditUserForm(forms.ModelForm):
         fields=["first_name","last_name","email"]
 class EditAccountForm(forms.ModelForm):
     class Meta:
-        model=  Account
-        fields=["user","date_of_birth","bio","job","photo"]
+        model=  User
+        fields=["date_of_birth","bio","job","photo"]

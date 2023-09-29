@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 from django_jalali.admin.filters import JDateFieldListFilter
 import django_jalali.admin as jadmin
-
+from django.contrib.auth.admin import UserAdmin
 admin.sites.AdminSite.site_header = "پنل مدیریت جنگو"
 admin.sites.AdminSite.site_title = "پنل  "
 admin.sites.AdminSite.index_title = "پنل مدیریت "
@@ -34,6 +34,9 @@ class CommentAdmin(admin.ModelAdmin):
 class ContactAdmin(admin.ModelAdmin):
     list_display = ['body', 'email']
 
-@admin.register(Account)
-class Account(admin.ModelAdmin):
-    list_display =["user","date_of_birth","bio","job","photo"]
+@admin.register(User)
+class Account(UserAdmin):
+    list_display=["username","first_name","last_name","phone"]
+    fieldsets=UserAdmin.fieldsets + (
+        ("additional information",{"fields":("date_of_birth","bio","photo","job","phone")}),
+    )

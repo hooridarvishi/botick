@@ -540,13 +540,22 @@
                                 <div class="ui-box-item">
                                     <div class="ui-box-item-desc" style="border-radius: 10px;background-color: #fff;">
                                         <div class="dashboard-user-img-profile">
-                                            <img src='{% static "img/default-icon/user-profile.png"  %}' width="80" height="80"
+                                            <img src='{{ user_.photo }}' width="80" height="80"
                                                 class="img-fluid rounded-circle" alt="">
                                         </div>
+
                                         <div class="dashboard-user-info">
-                                            <h6 class="user-name">amir rezaie</h6>
-                                            <h6 class="text-muted user-number">09338492205</h6>
+                                            <h6 class="user-name">{{ user.username }}</h6>
+                                            <h6 class="text-muted user-number">{{ user_.phone }}</h6>
                                         </div>
+
+                                        <div class="dashboard-user-info">
+                                            <h6 class="user-name">{{ user_.date_of_birth }}</h6>
+                                            <h6 class="text-muted user-number">{{ user_.bio }}</h6>
+
+                                            <h6 class="text-muted user-number">{{ user_.job }}</h6>
+                                        </div>
+
                                         <div class="dashboard-user-btn">
                                             <div>
                                                 <i class="bi bi-key"></i>
@@ -640,12 +649,12 @@
                                                             اطلاعات شخصی
                                                         </h4>
                                                         <button data-bs-toggle="modal" data-bs-target="#editUser"
-                                                            class="btn-main btn-main-primary" href="">ویرایش <i
+                                                            class="btn-main btn-main-primary" href="{% url 'products:edit_account' %}">ویرایش <i
                                                                 class="bi bi-pencil-fill"></i></button>
                                                     </div>
                                                 </div>
-                                                <div class="ui-box-item-desc p-0">
-                                                    <table class="table main-table shadow-none main-table-2">
+                                                <!-- <div class="ui-box-item-desc p-0"> -->
+                                                    <!-- <table class="table main-table shadow-none main-table-2">
                                                         <tr>
                                                             <td colspan="2">
                                                                 <h6 class="text-muted">نام و نام خانوادگی</h6>
@@ -653,16 +662,16 @@
                                                                     {{ product.author }}
                                                                 </p>
                                                             </td>
-                                                            <td colspan="2"> 
-                                                                <h6 class="text-muted">شماره تلفن</h6>
-                                                                <p class="fw-bold mt-2">{{ product.phone }}</p>
-                                                            </td>
+{#                                                            <td colspan="2"> #}
+{#                                                                <h6 class="text-muted">شماره تلفن</h6>#}
+{#                                                                <p class="fw-bold mt-2">{{ product.phone }}</p>#}
+{#                                                            </td>#}
                                                         </tr>
                                                         <tr>
-                                                            <td colspan="2">
-                                                                <h6>پست الکترونیک</h6>
-                                                                <p class="fw-bold mt-2">{{ product.email }}</p>
-                                                            </td>
+{#                                                            <td colspan="2">#}
+{#                                                                <h6>پست الکترونیک</h6>#}
+{#                                                                <p class="fw-bold mt-2">{{ product.email }}</p>#}
+{#                                                            </td>#}
                                                             <td colspan="2">
                                                                 <h6>کد ملی</h6>
                                                                 <p class="fw-bold mt-2">61400011133322</p>
@@ -684,8 +693,8 @@
                                                                 <p class="fw-bold mt-2">خرم آباد شهریار انتهای کوچه</p>
                                                             </td>
                                                         </tr>
-                                                    </table>
-                                                </div>
+                                                    </table> -->
+                                                <!-- </div> -->
                                             </div>
                                         </div>
                                     </div>

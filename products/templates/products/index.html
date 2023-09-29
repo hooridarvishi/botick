@@ -550,10 +550,11 @@
                 </div>
                 <div class="col-lg-2 col-4">
                     <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/abzar-khodro.png" %}' alt="" class="img-fluid">
-                            <h6>ابزار خودرو</h6>
-                        </a>
+                        {% if category %}
+                             <a href="{% url 'products:list' %}">
+{{category}}
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="col-lg-2 col-4">
@@ -574,9 +575,9 @@
                 </div>
                 <div class="col-lg-2 col-4">
                     <div class="main-category-item">
-                        <a href="">
+                        <a href="{% url 'products:products_category' 'کلاه' %}">
                             <img src='{% static "img/main-category/autr.png"  %}'alt="" class="img-fluid">
-                            <h6>زیبایی و سلامت</h6>
+                            <h6>کلاه</h6>
                         </a>
                     </div>
                 </div>
@@ -663,7 +664,7 @@
                     <div class="product-box-title flex-md-column flex-row">
                         <h2>پیشنهادهای پر تخفیف هفته</h2>
                         <img src='{% static "img/slider/product-box-img-1.png"  %}'class="img-fluid d-md-block d-none" alt="">
-                        <a href="{% url 'products:products' %}">مشاهده همه <i class="bi bi-chevron-left"></i></a>
+                        <a href="{% url 'products:products'  %}">مشاهده همه <i class="bi bi-chevron-left"></i></a>
                     </div>
                 </div>
                 <div class="col-md-10">
@@ -889,7 +890,7 @@
                                 <div class="product-box-item shadow-sm">
                                     <div class="product-box-item-img">
                                         <a href="">
-                                            <img src='{% static "img/product/laptop4.jpg" alt %}' class="img-fluid">
+                                            <img src='{% static "img/product/laptop4.jpg"  %}' class="img-fluid">
                                         </a>
                                         <div class="product-box-item-hover">
                                             <div class="product-box-item-hover-btn">
@@ -921,16 +922,31 @@
                                     </a>
                                 </div>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="product-box-item shadow-sm see-more-item">
-                                    <div class="see-all">
-                                        <a href="{% url 'products:products' %}">
-                                            <i class="bi bi-arrow-left-circle"></i>
-                                            <p>مشاهده همه</p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+{#                            <div class="swiper-slide">#}
+{#                                <div class="product-box-item shadow-sm see-more-item">#}
+{#                                {% if is not None %}#}
+{#                                <div class="see-all">#}
+{#                                    <a href="{% url 'products:products' %}">#}
+{#                                        <i class="bi bi-arrow-left-circle"></i>#}
+{#                                        <p>مشاهده محصولات #}
+{#                                            {{  }}#}
+{#                                        </p>#}
+{#                                    </a>#}
+{#                              #}
+{#                              #}
+{#                                </div>                                #}
+{#                                {% else %}#}
+{#                                    <div class="see-all">#}
+{#                                        <a href="{% url 'products:products' %}">#}
+{#                                            <i class="bi bi-arrow-left-circle"></i>#}
+{#                                            <p>مشاهده همه</p>#}
+{#                                        </a>#}
+{#                                  #}
+{#                                  #}
+{#                                    </div>#}
+{#                            {% endif %}#}
+{#                                </div>#}
+{#                            </div>#}
                         </div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-button-prev"></div>
@@ -980,7 +996,7 @@
                         <div class="swiper-slide">
                             <div class="product-box-item shadow-box see-more-item">
                                 <div class="see-all">
-                                    <a href="category.html">
+                                    <a href="{% url 'products:products' %}">
                                         <i class="bi bi-arrow-left-circle"></i>
                                         <p>مشاهده همه</p>
                                     </a>
@@ -1404,7 +1420,7 @@
                         <div class="swiper-slide">
                             <div class="product-box-item shadow-sm see-more-item">
                                 <div class="see-all">
-                                    <a href="category.html">
+                                    <a href="{% url 'products:products' %}">
                                         <i class="bi bi-arrow-left-circle"></i>
                                         <p>مشاهده همه</p>
                                     </a>
