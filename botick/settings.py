@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     'jquery',
     'django.contrib.sites',
+    'easy_thumbnails',
     # 'django-owl',
 ]
 SITE_ID = 1
@@ -161,3 +162,4 @@ LOGIN_URL = "/blog/login/"
 LOGOUT_URL = "/blog/logout/"
 EMAIL_BACKEND="django.core.mail.backends.console.EmailBackend"
 AUTH_USER_MODEL="products.User"
+THUMBNAIL_DEBUG=True

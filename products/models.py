@@ -17,6 +17,7 @@ class User(AbstractUser):
     phone=models.CharField(max_length=11)
 
 
+
 class PublishedManager(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=ProductModel.Status.PUBLISHED)
@@ -28,11 +29,12 @@ class ProductModel(models.Model):
         PUBLISHED = 'PB', 'Published'
         REJECTED = 'RJ', 'Rejected'
     CATEGORY_CHOICES=(
-        ("کلاه","کلاه"),
+        ("موبایل","موبایل"),
         ("عینک","عینک"),
-        ("وسایل خانه","وسایل خانه")
+        ("وسایل خانه","وسایل خانه"),
+        ("کالای دیجیتال","کالای دیجیتال"),
     )
-    category=models.CharField(max_length=12 , default="کلاه" , choices=CATEGORY_CHOICES)
+    category=models.CharField(max_length=39 , default="موبایل" , choices=CATEGORY_CHOICES)
     # relations
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user_posts", verbose_name="نویسنده")
     # data fields
@@ -51,7 +53,10 @@ class ProductModel(models.Model):
     objects = jmodels.jManager()
     published = PublishedManager()
     old_price=models.CharField(max_length=12,default="")
-    discount=models.CharField(max_length=12 , default="")    
+    discount=models.CharField(max_length=12 , default="")
+    likes=models.ManyToManyField(User , related_name="like_products" , blank=True)
+    saved_by=models.ManyToManyField(User,related_name="saved_posts")
+
     class Meta:
         ordering = ['-publish']
         indexes = [

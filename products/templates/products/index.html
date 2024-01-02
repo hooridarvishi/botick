@@ -559,7 +559,7 @@
                 </div>
                 <div class="col-lg-2 col-4">
                     <div class="main-category-item">
-                        <a href="">
+                        <a href="{% url 'products:products_category' "کالای دیجیتال" %}">
                             <img src='{% static "img/main-category/kalaye-degital.png" %}' alt="" class="img-fluid">
                             <h6>کالای دیجیتال</h6>
                         </a>
@@ -567,7 +567,7 @@
                 </div>
                 <div class="col-lg-2 col-4">
                     <div class="main-category-item">
-                        <a href="">
+                        <a href="{% url 'products:products_category' "وسایل خانه" %}">
                             <img src='{% static "img/main-category/ashpazkhane.png" %}' alt="" class="img-fluid">
                             <h6>خانه و آشپزخانه</h6>
                         </a>
@@ -575,68 +575,68 @@
                 </div>
                 <div class="col-lg-2 col-4">
                     <div class="main-category-item">
-                        <a href="{% url 'products:products_category' 'کلاه' %}">
-                            <img src='{% static "img/main-category/autr.png"  %}'alt="" class="img-fluid">
-                            <h6>کلاه</h6>
+                        <a href="{% url 'products:products_category' 'عینک' %}">
+                            <img src='{% static "img/media/post_images/SG.jpg"  %}'alt="" class="img-fluid">
+                            <h6>عینک</h6>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-4">
                     <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/boomi.png" %}' alt="" class="img-fluid">
-                            <h6>محصولات بومی و محلی</h6>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-4">
-                    <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/children.png" %}' alt="" class="img-fluid">
-                            <h6>اسباب بازی،کودک و نوزاد</h6>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-4">
-                    <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/lavazem-tahrir.png" %}' alt="" class="img-fluid">
-                            <h6>کتاب ، لوازم تحریر و هنر</h6>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-4">
-                    <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/milk.png"  %}'alt="" class="img-fluid">
-                            <h6>کالاهای سوپر مارکتی</h6>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-4">
-                    <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/mobile.png" %}' alt="" class="img-fluid">
+                        <a href="{% url 'products:products_category' "موبایل" %}">
+                            <img src='{% static "img/media/post_images/download (1).jpg" %}' alt="" class="img-fluid">
                             <h6>موبایل</h6>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-4">
-                    <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/poshak.png" %}' alt="" class="img-fluid">
-                            <h6>پوشاک</h6>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-4">
-                    <div class="main-category-item">
-                        <a href="">
-                            <img src='{% static "img/main-category/varzeshi.png" %}' alt="" class="img-fluid">
-                            <h6>ورزش و سفر</h6>
-                        </a>
-                    </div>
-                </div>
+{#                <div class="col-lg-2 col-4">#}
+{#                    <div class="main-category-item">#}
+{#                        <a href="">#}
+{#                            <img src='{% static "img/main-category/children.png" %}' alt="" class="img-fluid">#}
+{#                            <h6>اسباب بازی،کودک و نوزاد</h6>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-lg-2 col-4">#}
+{#                    <div class="main-category-item">#}
+{#                        <a href="">#}
+{#                            <img src='{% static "img/main-category/lavazem-tahrir.png" %}' alt="" class="img-fluid">#}
+{#                            <h6>کتاب ، لوازم تحریر و هنر</h6>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-lg-2 col-4">#}
+{#                    <div class="main-category-item">#}
+{#                        <a href="">#}
+{#                            <img src='{% static "img/main-category/milk.png"  %}'alt="" class="img-fluid">#}
+{#                            <h6>کالاهای سوپر مارکتی</h6>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-lg-2 col-4">#}
+{#                    <div class="main-category-item">#}
+{#                        <a href="">#}
+{#                            <img src='{% static "img/main-category/mobile.png" %}' alt="" class="img-fluid">#}
+{#                            <h6>موبایل</h6>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-lg-2 col-4">#}
+{#                    <div class="main-category-item">#}
+{#                        <a href="">#}
+{#                            <img src='{% static "img/main-category/poshak.png" %}' alt="" class="img-fluid">#}
+{#                            <h6>پوشاک</h6>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#                <div class="col-lg-2 col-4">#}
+{#                    <div class="main-category-item">#}
+{#                        <a href="">#}
+{#                            <img src='{% static "img/main-category/varzeshi.png" %}' alt="" class="img-fluid">#}
+{#                            <h6>ورزش و سفر</h6>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
             </div>
         </div>
     </div>

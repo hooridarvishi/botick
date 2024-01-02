@@ -4,23 +4,23 @@
 {%  bootstrap_css %}
 {% bootstrap_javascript %}
 
-{% block head %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title>فروشگاه رستا</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'js/plugin/countdown/countdown.css' %} ">
-    <link rel="stylesheet" href="{% static 'js/plugin/quantity/style.css' %} ">
-    <link rel="stylesheet" href="{% static 'js/plugin/back-to-top/jquery-backToTop.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'js/plugin/range/main.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'js/plugin/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
-    <link rel="stylesheet" href="{% static 'css/responsive.css' %} ">
-{% endblock %}
+{#{% block head %}#}
+{#    <meta charset="UTF-8">#}
+{#    <meta http-equiv="X-UA-Compatible" content="IE=edge">#}
+{#    <meta name="viewport"#}
+{#        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">#}
+{#    <title>فروشگاه رستا</title>#}
+{#    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'css/bootstrap-icons/bootstrap-icons.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'js/plugin/countdown/countdown.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'js/plugin/quantity/style.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'js/plugin/back-to-top/jquery-backToTop.min.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'js/plugin/range/main.min.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'js/plugin/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'css/style.css' %} ">#}
+{#    <link rel="stylesheet" href="{% static 'css/responsive.css' %} ">#}
+{#{% endblock %}#}
 
 {% block content %}
 
@@ -552,7 +552,7 @@
                                     <li class="breadcrumb-item">
                                         <a href="#">محصولات</a>
                                     </li>
-                                    <li class="breadcrumb-item active" aria-current="page">
+                                    <li class="breadcrumb-item active" aria-current="page" >
                                         <span>گوشی موبایل شیائومی مدل Poco M4 Pro 5G دو سیم کارت ظرفیت 128/6
                                             گیگابایت</span>
                                     </li>
@@ -648,9 +648,30 @@
                                     <i class="bi bi-share-fill"></i>
                                     <span>اشتراک گذاری</span>
                                 </div>
-                                <div class="icon-product-box-item">
+                                <div data-product-id="{{ product.id }}" class="icon-product-box-item product">
                                     <i class="bi bi-heart"></i>
-                                    <span>علاقه مندی</span>
+                                    <button class="like-button">
+                                        {% if request.user in product.likes.all %}
+                                            unlike
+                                         {% else %}
+                                            like
+                                        {% endif %}
+                                    </button>
+                                <span class="likes-count">
+                                    {{product.likes.count}}
+                                </span>
+                                </div>
+
+                                <div data-product-id="{{ product.id }}" class="icon-product-box-item product">
+                                    <i class="bi bi-heart"></i>
+                                    <button class="save-post">
+                                        {% if request.user in product.saved_by.all %}
+                                            unsave
+                                         {% else %}
+                                            save
+                                        {% endif %}
+                                    </button>
+
                                 </div>
                                 <div class="icon-product-box-item">
                                     <i class="bi bi-arrow-left-right"></i>
@@ -1234,7 +1255,7 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="productTable-pane">
-                            <h4 class="fw-bold mt-3 text-muted-2">مشخصات فنی</h5>
+                            <h5 class="fw-bold mt-3 text-muted-2">مشخصات فنی</h5>
                                 <span class="text-muted font-14 mt-2 d-block">HBQ-I7 Bluetooth Handsfree</span>
                                 <div class="box_list mt-4">
                                     <p class="title"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -2643,7 +2664,7 @@
         </div>
     </div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src='{% static "js/jquery-3.6.1.min.js" %}'></script>
     <script src='{% static "js/bootstrap.bundle.min.js" %}'></script>
     <script src='{% static "js/swiper-bundle.min.js" %}'></script>
@@ -2654,5 +2675,47 @@
     <script src='{% static "js/plugin/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js" %}'></script>
     <script src='{% static "js/jquery-app.js" %}'></script>
 
+<script>
+    $(document).ready(function (){
+        $(".like-button").click(function (){
+            var product_id=$(this).closest(".product").data("product-id");
+            var button=$(this);
+            $.ajax({
+                type:'POST',
+                url:"{% url 'products:like_product' %}" ,
+                data:{'product_id':product_id ,'csrfmiddlewaretoken':'{{ csrf_token }}' },
+                success:function (data){
+                    if (data.liked){
+                        button.text("unlike");
+                    } else {
+                        button.text("like");
+                    }
+                    $(".likes-count").text(data.likes_count);
+                    console.log(data.likes_count)
+                },
+            });
+        });
+        $(".save_post").click(function (){
+
+            var button=$(this);
+            $.ajax({
+                type:'POST',
+                url:"{% url 'products:save_product' %}" ,
+                data:{'product_id':{{ product.id }} ,'csrfmiddlewaretoken':'{{ csrf_token }}' },
+                success:function (data){
+                    if (data.save){
+                        button.text("unsave");
+                    } else {
+                        button.text("save");
+                    }
+
+                },
+                error:function (error){
+                    console.log("err in"+error);
+                }
+            });
+        });
+    })
+</script>
 
 {% endblock %}

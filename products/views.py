@@ -4,27 +4,27 @@ from .models import *
 from .forms import *
 from django.views.decorators.http import require_POST
 from django.contrib.postgres.search import TrigramSimilarity
-from  django.contrib.auth import authenticate,login ,logout
-from django.http import HttpResponse
+from django.contrib.auth import authenticate, login, logout
+from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
 def index(request):
-
     return render(request, "products/index.html")
 
-def ProductListView(request,category=None):
-    if category is None:
-        products=ProductModel.published.filter(category=category)
-    else:
-        products =ProductModel.objects.all()
 
+def ProductListView(request, category=None):
+    if category is not None:
+        products = ProductModel.published.filter(category=category)
+    else:
+        products = ProductModel.objects.all()
 
     context = {
         'products': products,
-        "category":category
+        "category": category
     }
     return render(request, "products/list.html", context)
-
 
 
 # class ProductListView(ListView):
@@ -43,21 +43,21 @@ def productDetailView(request, pk):
     #     print(request)
     #     form=CommentForm(data=request.POST)
     #     print("***")
-        # comment=None
-        # if form.is_valid():
-        #     print("is valid+++")
-            # comment=form.save(commit=False)
-            # comment.product=product
-            # comment.save()
-            # cd = form.cleaned_data
-            # CommentModel.objects.create(
-            #     title=cd["title"],
-            #     message_positive_points=cd["message_positive_points"],
-            #     message_negative_points=cd["message_negative_points"], message_text=cd["message_text"]
-            # )
-            # return redirect("products:index")
-        # else:
-        #     form=CommentForm()
+    # comment=None
+    # if form.is_valid():
+    #     print("is valid+++")
+    # comment=form.save(commit=False)
+    # comment.product=product
+    # comment.save()
+    # cd = form.cleaned_data
+    # CommentModel.objects.create(
+    #     title=cd["title"],
+    #     message_positive_points=cd["message_positive_points"],
+    #     message_negative_points=cd["message_negative_points"], message_text=cd["message_text"]
+    # )
+    # return redirect("products:index")
+    # else:
+    #     form=CommentForm()
     context = {
         "product": product,
         # "comments": comments,
@@ -68,20 +68,21 @@ def productDetailView(request, pk):
 
 
 def commentView(request):
-    form=CommentForm()
+    form = CommentForm()
 
-    if request.method=="POST":
-        form=CommentForm(request.POST)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
         if form.is_valid():
-            cd=form.cleaned_data
+            cd = form.cleaned_data
             CommentModel.oblects.create(message_positive_points=cd["message_positive_points"],
                                         message_negative_points=cd["message_negative_points"],
                                         message_text=cd["message_text"]
                                         )
             return redirect("products:index")
     else:
-        form=CommentForm()
-    return render(request,"products/detail.html",{"form":form})
+        form = CommentForm()
+    return render(request, "products/detail.html", {"form": form})
+
 
 def contactView(request):
     if request.method == "POST":
@@ -92,8 +93,10 @@ def contactView(request):
 
             return redirect("products:index")
     else:
-        form=Contact_us()
-    return render(request,"forms/contact_us.html",{"form":form})
+        form = Contact_us()
+    return render(request, "forms/contact_us.html", {"form": form})
+
+
 #
 # @require_POST
 # def product_comment(request, product_id):
@@ -157,102 +160,159 @@ def search_products_view(request):
 #     return render(request, "forms/contact_result.html", context)
 @login_required
 def profile(request):
-    user_=Users.objects.all
-    user=request.user
-    products=ProductModel.published.filter(author=user)
-    return render(request,"products/profile.html",{"products":products , "user":user , "user_":user_})
+    user_ = User.objects.all
+    user = request.user
+    save_products=user.saved_posts.all()
+    products = ProductModel.published.filter(author=user)
+    return render(request, "products/profile.html", {"products": products, "user": user, "user_": user_ ,"save_products":save_products})
+
 
 @login_required
 def create_products(request):
-    if request.method=="POST":
-        form=CreateProductsForm(request.POST , request.FILES)
+    if request.method == "POST":
+        form = CreateProductsForm(request.POST, request.FILES)
         if form.is_valid:
-            product=form.save(commit=False)
-            product.author=request.user
+            product = form.save(commit=False)
+            product.author = request.user
             product.save()
-            ImageModel.objects.create(image_file=form.cleaned_data["image1"] , product=product)
-            ImageModel.objects.create(image_file=form.cleaned_data["image2"] , product=product)
+            ImageModel.objects.create(image_file=form.cleaned_data["image1"], product=product)
+            ImageModel.objects.create(image_file=form.cleaned_data["image2"], product=product)
     else:
-        form=CreateProductsForm()
-    return render(request, "forms/create_product.html",{"form":form})
+        form = CreateProductsForm()
+    return render(request, "forms/create_product.html", {"form": form})
+
 
 @login_required
-def delete_products(request,product_id):
-    product=get_object_or_404(ProductModel,id=product_id)
-    if request.method=="POST":
+def delete_products(request, product_id):
+    product = get_object_or_404(ProductModel, id=product_id)
+    if request.method == "POST":
         product.delete()
         return redirect("products:profile")
-    return render(request,"forms/delete_products.html",{"product":product})
+    return render(request, "forms/delete_products.html", {"product": product})
+
 
 @login_required
-def edit_products(request,product_id):
-    product=get_object_or_404(ProductModel,id=product_id)
-    if request.method=="POST":
-        form=CreateProductsForm(request.POST , request.FILES , instance=product)
+def edit_products(request, product_id):
+    product = get_object_or_404(ProductModel, id=product_id)
+    if request.method == "POST":
+        form = CreateProductsForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
-            product=form.save(commit=False)
-            product.author=request.user
+            product = form.save(commit=False)
+            product.author = request.user
             product.save()
-            ImageModel.objects.create(image_file=form.cleaned_data["image1"] , product=product)
+            ImageModel.objects.create(image_file=form.cleaned_data["image1"], product=product)
             ImageModel.objects.create(image_file=form.cleaned_data["image2"], product=product)
             return redirect("products:profile")
     else:
-        form=CreateProductsForm(instance=product)
-    return render(request,"forms/create_product.html",{"form":form , "product":product })
+        form = CreateProductsForm(instance=product)
+    return render(request, "forms/create_product.html", {"form": form, "product": product})
+
 
 @login_required
-def delete_image(request,image_id):
-    image=get_object_or_404(ImageModel,id=image_id)
+def delete_image(request, image_id):
+    image = get_object_or_404(ImageModel, id=image_id)
     image.delete()
     return redirect("products:profile")
 
+
 def login_user(request):
-    if request.method=="POST":
-        form=LoginForm(request.POST)
+    if request.method == "POST":
+        form = LoginForm(request.POST)
         if form.is_valid():
-            cd=form.cleaned_data
-            user=authenticate(request,username=cd['username'],password=cd['password'])
+            cd = form.cleaned_data
+            user = authenticate(request, username=cd['username'], password=cd['password'])
             if user is not None:
                 if user.is_active:
-                    login(request,user)
+                    login(request, user)
                     return redirect("products:profile")
                 else:
                     return HttpResponse("کاربر اکتیو نیستی")
             else:
                 return HttpResponse("شما در لیست کاربران نیستی ابتدا ثبت نام کن")
     else:
-             form=LoginForm()
-    return render(request,"forms/login.html",{"form":form})
+        form = LoginForm()
+    return render(request, "forms/login.html", {"form": form})
 
 
 def register(request):
-    if request.method=="POST":
-        form=UserRegisterForm(request.POST)
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
-            user=form.save(commit=False)
+            user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
             # Account.objects.create(user=user)
-            return render(request, "registration/register_done.html", {"user":user})
+            return render(request, "registration/register_done.html", {"user": user})
 
     else:
-        form=UserRegisterForm()
-    return render(request,"registration/register.html",{"form":form})
+        form = UserRegisterForm()
+    return render(request, "registration/register.html", {"form": form})
+
 
 @login_required
 def edit_account(request):
-    if request.method=="POST":
-        user_form=EditUserForm(request.POST , instance=request.user)
-        account_form=EditAccountForm(request.POST , instance=request.user.account , files=request.FILES)
+    if request.method == "POST":
+        user_form = EditUserForm(request.POST, instance=request.user)
+        account_form = EditAccountForm(request.POST, instance=request.user.account, files=request.FILES)
         if account_form.is_valid() and user_form.is_valid():
             account_form.save()
             user_form.save()
     else:
-        user_form=EditUserForm(instance=request.user)
-        account_form=EditAccountForm(instance=request.user.account)
-    context={
-        "user_form":user_form ,
-        "account_form":account_form
+        user_form = EditUserForm(instance=request.user)
+        account_form = EditAccountForm(instance=request.user.account)
+    context = {
+        "user_form": user_form,
+        "account_form": account_form
     }
 
-    return render(request,"registration/edit_account.html",context)
+    return render(request, "registration/edit_account.html", context)
+
+
+@login_required
+@require_POST
+def like_product(request):
+    product_id = request.POST.get("product_id")
+    if product_id is not None:
+        product = get_object_or_404(ProductModel, id=product_id)
+        user = request.user
+        if user in product.likes.all():
+            product.likes.remove(user)
+            print("unliked")
+            liked = False
+            print("unliked _")
+        else:
+            product.likes.add(user)
+            print("liked")
+            liked = True
+            print("liked +")
+        product_likes_count = product.likes.count()
+        print(product_likes_count)
+        response_data = {
+            'liked': liked,
+            'likes_count': product_likes_count
+        }
+    else:
+        response_data = {
+            "error": "invalid product_id"
+        }
+    return JsonResponse(response_data)
+
+def save_product(request):
+
+    product_id = request.POST.get("product_id")
+    if product_id is not None:
+        product = ProductModel.objects.get(pk=product_id)
+        user = request.user
+        if user in product.saved_by.all():
+            product.saved_by.remove(user)
+            saved = False
+        else:
+            product.saved_by.add(user)
+            saved = True
+        return JsonResponse({"saved":saved})
+
+
+    return JsonResponse({"error":"invalid request"})
+
+
+

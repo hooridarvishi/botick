@@ -1,5 +1,7 @@
 ﻿@import url('reset.css');
-
+.list_style{
+    border-color: palegoldenrod;
+}
 @font-face {
     font-family: 'shabnam';
     src: url('../font/shabnam-fa-num/Shabnam-Light-FD.eot') format('eot'),

@@ -1,5 +1,9 @@
 {% extends 'parent/base.html' %}
-{% load static %}
+{% load static  %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load thumbnail %}
 {% block title %}
     list of products
 {% endblock %}
@@ -8,25 +12,24 @@
 {% endblock %}
 {% block content %}
 
-    <div class="grid-container-list">
+    <div class=" list_style grid-container-list">
+    {% for product in products %}
 
-            {% for product in products %}
+                <div class="grid-item-list">
 
-        <div class="grid-item-list">
-
-     <img  src="{{ product.images.first.image_file.url }}" alt="{{product.images.first.title}}">
- <br>
- <br> <br>
-       <a href="{{ product.get_absolute_url }}">{{ product.title }}
-       </a>
-            <br>
-     <div class="grid-item-description">
-            {{ product.description|truncatewords:4 }}
-      </div>
-        <div class="item-list-price">
-        {{ product.price }}تومان
-        </div>
-        </div>
+             <img  src="{{ product.images.first.image_file.url }}" alt="{{product.images.first.title}}">
+         <br>
+         <br> <br>
+               <a href="{{ product.get_absolute_url }}">{{ product.title }}
+               </a>
+                    <br>
+             <div class="grid-item-description">
+                    {{ product.description|truncatewords:4 }}
+              </div>
+                <div class="item-list-price">
+                {{ product.price }}تومان
+                </div>
+                </div>
     {% endfor %}
     </div>
     {% include "partials/pagination.html" with page=page_obj %}
